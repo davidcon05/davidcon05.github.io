@@ -5,7 +5,6 @@ vCard - Personal Portfolio
 alt = David Contreras
 David Contreras
 Mobile SDET
-Junior Android Developer
 
 Show Contacts
 
@@ -14,6 +13,9 @@ david.b.contreras@gmail.com
 
 Phone
 +1 (210) 831-6661
+
+Birthday
+December 23, 1983
 
 Location
 Raleigh, North Carolina, USA
