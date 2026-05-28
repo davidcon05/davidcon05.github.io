@@ -11,11 +11,11 @@ const { currentPath } = Astro.props;
     <!-- Desktop Navigation -->
     <div class="hidden md:flex items-center gap-8 ml-auto">
       <a
-        class={currentPath === '/blog'
+        class={currentPath === '/' || currentPath === '/blog'
           ? 'text-primary font-bold border-b-2 border-primary pb-1 transition-colors'
           : 'text-on-surface-variant hover:text-secondary transition-colors'
         }
-        href="/blog"
+        href="/"
       >
         Blog
       </a>
@@ -56,11 +56,11 @@ const { currentPath } = Astro.props;
   >
     <div class="flex flex-col px-[var(--spacing-margin-mobile)] py-4 space-y-4">
       <a
-        class={currentPath === '/blog'
+        class={currentPath === '/' || currentPath === '/blog'
           ? 'text-primary font-bold py-2'
           : 'text-on-surface-variant py-2'
         }
-        href="/blog"
+        href="/"
       >
         Blog
       </a>
