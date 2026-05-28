@@ -1,0 +1,456 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopNavBar from '../components/TopNavBar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Skills | David Contreras" description="Technical proficiencies, industry specializations, and career milestones.">
+  <TopNavBar currentPath="/skills" />
+
+  <main class="pt-32 pb-[var(--spacing-section-gap)] max-w-7xl mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]">
+    <!-- Hero Section -->
+    <header class="mb-24">
+      <div class="inline-block bg-primary-container text-on-primary-container px-3 py-1 rounded mb-4 font-[var(--font-label-mono)] text-[var(--font-size-label-mono)]">
+        SYSTEM_STATUS: READY
+      </div>
+      <h1 class="mb-6 tracking-tight" style="font-family: var(--font-headline-xl); font-size: var(--font-size-headline-xl); line-height: var(--font-size-headline-xl--line-height); font-weight: var(--font-size-headline-xl--font-weight); letter-spacing: var(--font-size-headline-xl--letter-spacing);">
+        Trophy Room
+      </h1>
+      <p class="font-[var(--font-body-lg)] text-[var(--font-size-body-lg)] text-on-surface-variant max-w-2xl">
+        A curated repository of technical proficiencies, industry specializations, and career milestones. Built with a commitment to clean architecture and performant systems.
+      </p>
+    </header>
+
+    <!-- Industries Section (Bento Style) -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="flex items-center gap-4 mb-12">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          Industries
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-[var(--spacing-gutter)]">
+        <!-- Core Expertise -->
+        <div class="md:col-span-12 bg-primary-container p-8 rounded-lg flex items-center justify-between overflow-hidden border-2 border-secondary">
+          <div class="flex-grow">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="material-symbols-outlined text-3xl" style="color: #acedff;">workspace_premium</span>
+              <h3 class="uppercase tracking-wider font-bold" style="font-family: var(--font-label-mono); font-size: 18px; letter-spacing: 0.15em; color: #acedff;">
+                CORE_EXPERTISE
+              </h3>
+            </div>
+            <h3 class="mb-4 text-white" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Mobile Quality Engineering
+            </h3>
+            <ul class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-white space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="mt-1" style="color: #acedff;">▸</span>
+                <span>Test strategy, automation, and accessibility across iOS & Android platforms</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1" style="color: #acedff;">▸</span>
+                <span>End-to-end CI/CD pipeline design and implementation</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1" style="color: #acedff;">▸</span>
+                <span>24 releases, 18 months, <span class="font-bold" style="color: #acedff;">ZERO</span> P0/P1/P2 bugs in production</span>
+              </li>
+            </ul>
+          </div>
+          <div class="opacity-10 text-white ml-8 hidden lg:block">
+            <span class="material-symbols-outlined text-[120px]">verified</span>
+          </div>
+        </div>
+
+        <!-- FinTech -->
+        <div class="md:col-span-8 border border-outline-variant p-8 rounded-lg bg-surface-container-lowest flex flex-col justify-between group overflow-hidden relative">
+          <div>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">SECTOR_01</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              FinTech & Banking
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant max-w-md">
+              Delivering secure, accessible financial mobile applications with WCAG 2.2 AA compliance and rigorous testing for legacy and modern platforms.
+            </p>
+          </div>
+          <div class="flex gap-4 mt-8">
+            <span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-secondary transition-colors">account_balance</span>
+            <span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-secondary transition-colors">payments</span>
+          </div>
+        </div>
+
+        <!-- QSR -->
+        <div class="md:col-span-4 border border-outline-variant p-8 rounded-lg bg-surface-container-lowest">
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">SECTOR_02</span>
+          <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+            QSR & Hospitality
+          </h3>
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">
+            Award-winning mobile ordering platforms with loyalty integration and zero production incidents.
+          </p>
+          <div class="mt-8">
+            <span class="material-symbols-outlined text-4xl text-outline-variant">restaurant</span>
+          </div>
+        </div>
+
+        <!-- Transportation -->
+        <div class="md:col-span-4 border border-outline-variant p-8 rounded-lg bg-surface-container-lowest">
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">SECTOR_03</span>
+          <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+            Transportation
+          </h3>
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">
+            Mobile ticketing and booking systems for high-speed rail with award-winning user experience.
+          </p>
+          <div class="mt-8">
+            <span class="material-symbols-outlined text-4xl text-outline-variant">train</span>
+          </div>
+        </div>
+
+        <!-- Entertainment -->
+        <div class="md:col-span-4 border border-outline-variant p-8 rounded-lg bg-surface-container-lowest">
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">SECTOR_04</span>
+          <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+            Entertainment & Media
+          </h3>
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">
+            High-traffic weather application achieving #1 App Store ranking with 100k+ downloads.
+          </p>
+          <div class="mt-8">
+            <span class="material-symbols-outlined text-4xl text-outline-variant">movie</span>
+          </div>
+        </div>
+
+        <!-- EcoTech / Environmental -->
+        <div class="md:col-span-4 border border-outline-variant p-8 rounded-lg bg-surface-container-lowest">
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">SECTOR_05</span>
+          <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+            EcoTech & Field Research
+          </h3>
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">
+            iOS application for environmental data collection and field note management using SwiftUI.
+          </p>
+          <div class="mt-8">
+            <span class="material-symbols-outlined text-4xl text-outline-variant">nature</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Languages & Mastery -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="flex items-center gap-4 mb-12">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          Languages & Mastery
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <!-- Swift (Mastered) -->
+        <div class="skill-badge border border-tertiary-fixed glow-emerald p-6 rounded-lg bg-surface-container-lowest flex flex-col items-center transition-all">
+          <span class="material-symbols-outlined text-on-tertiary-container mb-4" style="font-variation-settings: 'FILL' 1; font-size: 40px;">code</span>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)]">Swift</span>
+          <span class="mt-2 text-[10px] uppercase tracking-widest text-on-tertiary-container font-bold">Mastered</span>
+        </div>
+
+        <!-- Kotlin (Mastered) -->
+        <div class="skill-badge border border-tertiary-fixed glow-emerald p-6 rounded-lg bg-surface-container-lowest flex flex-col items-center transition-all">
+          <span class="material-symbols-outlined text-on-tertiary-container mb-4" style="font-variation-settings: 'FILL' 1; font-size: 40px;">terminal</span>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)]">Kotlin</span>
+          <span class="mt-2 text-[10px] uppercase tracking-widest text-on-tertiary-container font-bold">Mastered</span>
+        </div>
+
+        <!-- Python -->
+        <div class="skill-badge border border-outline-variant p-6 rounded-lg bg-surface-container-lowest flex flex-col items-center transition-all">
+          <span class="material-symbols-outlined text-outline mb-4" style="font-size: 40px;">data_object</span>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)]">Python</span>
+          <span class="mt-2 text-[10px] uppercase tracking-widest text-outline">Expert</span>
+        </div>
+
+        <!-- TypeScript -->
+        <div class="skill-badge border border-outline-variant p-6 rounded-lg bg-surface-container-lowest flex flex-col items-center transition-all">
+          <span class="material-symbols-outlined text-outline mb-4" style="font-size: 40px;">integration_instructions</span>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)]">TypeScript</span>
+          <span class="mt-2 text-[10px] uppercase tracking-widest text-outline">Advanced</span>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-badge border border-outline-variant p-6 rounded-lg bg-surface-container-lowest flex flex-col items-center transition-all">
+          <span class="material-symbols-outlined text-outline mb-4" style="font-size: 40px;">javascript</span>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)]">JavaScript</span>
+          <span class="mt-2 text-[10px] uppercase tracking-widest text-outline">Expert</span>
+        </div>
+
+        <!-- Java -->
+        <div class="skill-badge border border-outline-variant p-6 rounded-lg bg-surface-container-lowest flex flex-col items-center transition-all">
+          <span class="material-symbols-outlined text-outline mb-4" style="font-size: 40px;">coffee</span>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)]">Java</span>
+          <span class="mt-2 text-[10px] uppercase tracking-widest text-outline">Competent</span>
+        </div>
+
+        <!-- C -->
+        <div class="skill-badge border border-outline-variant p-6 rounded-lg bg-surface-container-lowest flex flex-col items-center transition-all">
+          <span class="material-symbols-outlined text-outline mb-4" style="font-size: 40px;">memory</span>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)]">C</span>
+          <span class="mt-2 text-[10px] uppercase tracking-widest text-outline">Familiar</span>
+        </div>
+
+        <!-- LISP -->
+        <div class="skill-badge border border-outline-variant p-6 rounded-lg bg-surface-container-lowest flex flex-col items-center transition-all">
+          <span class="material-symbols-outlined text-outline mb-4" style="font-size: 40px;">account_tree</span>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)]">LISP</span>
+          <span class="mt-2 text-[10px] uppercase tracking-widest text-outline">Familiar</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frameworks & Tools -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="flex items-center gap-4 mb-12">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          Frameworks & Tools
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)]">
+        <!-- Mobile Frameworks -->
+        <div class="border border-outline-variant bg-surface-container-lowest overflow-hidden group">
+          <div class="bg-surface-container p-4 border-b border-outline-variant flex justify-between items-center">
+            <div class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-secondary"></span> MOBILE_STACK
+            </div>
+            <span class="text-[10px] font-[var(--font-label-mono)] opacity-50">VERSION 2024.1</span>
+          </div>
+          <div class="p-8">
+            <div class="flex flex-wrap gap-3">
+              <span class="bg-primary text-on-primary px-4 py-2 font-[var(--font-label-mono)] text-xs">SwiftUI</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">UIKit</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">Jetpack Compose</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">XML Views</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testing & Automation -->
+        <div class="border border-outline-variant bg-surface-container-lowest overflow-hidden group">
+          <div class="bg-surface-container p-4 border-b border-outline-variant flex justify-between items-center">
+            <div class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span> TEST_AUTOMATION
+            </div>
+            <span class="text-[10px] font-[var(--font-label-mono)] opacity-50">STABLE_BUILD</span>
+          </div>
+          <div class="p-8">
+            <div class="flex flex-wrap gap-3">
+              <span class="bg-primary text-on-primary px-4 py-2 font-[var(--font-label-mono)] text-xs">XCUITest</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">Espresso</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">XCTest</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">Swift Testing</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">JUnit4</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">JUnit5</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">pytest</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">Maestro</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="border border-outline-variant bg-surface-container-lowest overflow-hidden group">
+          <div class="bg-surface-container p-4 border-b border-outline-variant flex justify-between items-center">
+            <div class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-secondary"></span> WEB_STACK
+            </div>
+            <span class="text-[10px] font-[var(--font-label-mono)] opacity-50">VERSION 2026.1</span>
+          </div>
+          <div class="p-8">
+            <div class="flex flex-wrap gap-3">
+              <span class="bg-primary text-on-primary px-4 py-2 font-[var(--font-label-mono)] text-xs">Astro</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">Tailwind CSS</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">Django</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DevOps & Cloud -->
+        <div class="border border-outline-variant bg-surface-container-lowest overflow-hidden group">
+          <div class="bg-surface-container p-4 border-b border-outline-variant flex justify-between items-center">
+            <div class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-secondary"></span> DEVOPS & CLOUD
+            </div>
+            <span class="text-[10px] font-[var(--font-label-mono)] opacity-50">PRODUCTION</span>
+          </div>
+          <div class="p-8">
+            <div class="flex flex-wrap gap-3">
+              <span class="bg-primary text-on-primary px-4 py-2 font-[var(--font-label-mono)] text-xs">Azure DevOps</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">GitHub Actions</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">GitLab CI</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">Bitbucket</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">Xcode Cloud</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">Firebase</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">AWS</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">Dynatrace</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Distribution & Monitoring -->
+        <div class="border border-outline-variant bg-surface-container-lowest overflow-hidden group md:col-span-2">
+          <div class="bg-surface-container p-4 border-b border-outline-variant flex justify-between items-center">
+            <div class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span> DISTRIBUTION & MONITORING
+            </div>
+            <span class="text-[10px] font-[var(--font-label-mono)] opacity-50">DEPLOYMENT_READY</span>
+          </div>
+          <div class="p-8">
+            <div class="flex flex-wrap gap-3">
+              <span class="bg-primary text-on-primary px-4 py-2 font-[var(--font-label-mono)] text-xs">Firebase App Distribution</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">Firebase Crashlytics</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">Firebase Test Lab</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">AWS Device Farm</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">Fastlane</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">Charles Proxy</span>
+              <span class="border border-outline px-4 py-2 font-[var(--font-label-mono)] text-xs">Postman</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="max-w-4xl">
+      <div class="flex items-center gap-4 mb-12">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          Experience
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="space-y-12">
+        <!-- Fintech Mobile App -->
+        <div class="relative pl-12 before:content-[''] before:absolute before:left-0 before:top-2 before:w-px before:h-full before:bg-outline-variant last:before:hidden">
+          <div class="absolute left-[-4px] top-2 w-[9px] h-[9px] bg-primary border-4 border-surface-container-lowest rounded-full ring-1 ring-primary"></div>
+          <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+            <h4 style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Senior Software Test Engineer
+            </h4>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">JAN 2026 — PRESENT</span>
+          </div>
+          <div class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant mb-4">Telus Digital • Fintech Mobile App</div>
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-4">
+            Orchestrated QA operations for a cross-functional team of four, managing testing lifecycles for both legacy and modernized fintech platforms. Pioneered accessibility testing frameworks using native and third-party tools to achieve and maintain WCAG 2.2 AA standards across all mobile interfaces.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] font-[var(--font-label-mono)] bg-surface-container-low px-2 py-1 rounded">ACCESSIBILITY</span>
+            <span class="text-[11px] font-[var(--font-label-mono)] bg-surface-container-low px-2 py-1 rounded">WCAG 2.2</span>
+            <span class="text-[11px] font-[var(--font-label-mono)] bg-surface-container-low px-2 py-1 rounded">FINTECH</span>
+          </div>
+        </div>
+
+        <!-- QSR Mobile App -->
+        <div class="relative pl-12 before:content-[''] before:absolute before:left-0 before:top-2 before:w-px before:h-full before:bg-outline-variant last:before:hidden">
+          <div class="absolute left-[-4px] top-2 w-[9px] h-[9px] bg-outline-variant border-4 border-surface-container-lowest rounded-full"></div>
+          <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+            <h4 style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Senior Software Test Engineer
+            </h4>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">JUL 2023 — JAN 2026</span>
+          </div>
+          <div class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant mb-4">Telus Digital • QSR Mobile App • 2025 Drum Awards Gold Winner</div>
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-4">
+            Mitigated operational risk by overseeing 16 high-velocity feature deployments with zero technical incidents; prevented 15 critical production escapes, securing $300,000 in savings. Architected the refactor of Espresso suite using the Robot Pattern, improving test readability and reducing test suite run times by nearly 70%. Led quality engineering for a comprehensive project integrating with nine distinct services.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] font-[var(--font-label-mono)] bg-surface-container-low px-2 py-1 rounded">ESPRESSO</span>
+            <span class="text-[11px] font-[var(--font-label-mono)] bg-surface-container-low px-2 py-1 rounded">ROBOT PATTERN</span>
+            <span class="text-[11px] font-[var(--font-label-mono)] bg-surface-container-low px-2 py-1 rounded">CI/CD</span>
+          </div>
+        </div>
+
+        <!-- Brightline Trains -->
+        <div class="relative pl-12 before:content-[''] before:absolute before:left-0 before:top-2 before:w-px before:h-full before:bg-outline-variant last:before:hidden">
+          <div class="absolute left-[-4px] top-2 w-[9px] h-[9px] bg-outline-variant border-4 border-surface-container-lowest rounded-full"></div>
+          <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+            <h4 style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Platform Software Test Engineer
+            </h4>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">JUL 2022 — JUL 2023</span>
+          </div>
+          <div class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant mb-4">WillowTree • Brightline Trains • Vega Digital Awards Gold & Silver</div>
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-4">
+            Engineered comprehensive manual and automated testing practice for native mobile and backend for frontend, enabling core features like booking, loyalty, and payment. Designed and implemented robust UI test suites using the Page Object Model (POM) for Espresso and XCUITest, comprising over 100 tests, which enabled the team to skip regression cycles.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] font-[var(--font-label-mono)] bg-surface-container-low px-2 py-1 rounded">ESPRESSO</span>
+            <span class="text-[11px] font-[var(--font-label-mono)] bg-surface-container-low px-2 py-1 rounded">XCUITEST</span>
+            <span class="text-[11px] font-[var(--font-label-mono)] bg-surface-container-low px-2 py-1 rounded">POM</span>
+          </div>
+        </div>
+
+        <!-- Fox Weather -->
+        <div class="relative pl-12 before:content-[''] before:absolute before:left-0 before:top-2 before:w-px before:h-full before:bg-outline-variant last:before:hidden">
+          <div class="absolute left-[-4px] top-2 w-[9px] h-[9px] bg-outline-variant border-4 border-surface-container-lowest rounded-full"></div>
+          <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+            <h4 style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Software Test Engineer
+            </h4>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">FEB 2022 — JUN 2022</span>
+          </div>
+          <div class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant mb-4">WillowTree • Fox Weather Mobile App • #1 App Store Position</div>
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-4">
+            Coordinated with native engineering teams on quality initiatives for notifications, automation frameworks, and releases. Increased automation coverage for regression test cases from 20% to 54%, streamlining manual testing efforts. Ensured high quality of release builds, contributing to the app achieving the #1 position in both app stores and surpassing 100,000 downloads.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] font-[var(--font-label-mono)] bg-surface-container-low px-2 py-1 rounded">AUTOMATION</span>
+            <span class="text-[11px] font-[var(--font-label-mono)] bg-surface-container-low px-2 py-1 rounded">REGRESSION</span>
+            <span class="text-[11px] font-[var(--font-label-mono)] bg-surface-container-low px-2 py-1 rounded">MOBILE QA</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .skill-badge:hover {
+    border-color: var(--color-on-tertiary-container);
+    box-shadow: 0 4px 12px rgba(0, 150, 104, 0.1);
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 15px rgba(111, 251, 190, 0.3);
+  }
+</style>
+
+<script>
+  // Status rotation
+  const statusEl = document.querySelector('.bg-primary-container.text-on-primary-container');
+  const statuses = ['SYSTEM_STATUS: READY', 'ENGINE: STABLE', 'LATENCY: 12ms', 'UPTIME: 99.9%'];
+  let currentIndex = 0;
+
+  if (statusEl) {
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % statuses.length;
+      statusEl.textContent = statuses[currentIndex];
+    }, 3000);
+  }
+
+  // Trophy badge hover effects
+  document.querySelectorAll('.skill-badge').forEach(badge => {
+    badge.addEventListener('mouseenter', () => {
+      const icon = badge.querySelector('.material-symbols-outlined');
+      if (icon) {
+        icon.style.fontVariationSettings = "'FILL' 1";
+      }
+    });
+    badge.addEventListener('mouseleave', () => {
+      const icon = badge.querySelector('.material-symbols-outlined');
+      if (icon && !badge.classList.contains('border-tertiary-fixed')) {
+        icon.style.fontVariationSettings = "'FILL' 0";
+      }
+    });
+  });
+</script>

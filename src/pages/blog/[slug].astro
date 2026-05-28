@@ -1,0 +1,300 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopNavBar from '../../components/TopNavBar.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection, render } from 'astro:content';
+
+// Generate static paths for all blog posts
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  const sortedPosts = allPosts.sort((a, b) =>
+    new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  );
+
+  return allPosts.map((post) => {
+    const currentIndex = sortedPosts.findIndex((p) => p.id === post.id);
+    return {
+      params: { slug: post.id },
+      props: {
+        entry: post,
+        previousPost: currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null,
+        nextPost: currentIndex > 0 ? sortedPosts[currentIndex - 1] : null,
+      },
+    };
+  });
+}
+
+const { entry, previousPost, nextPost } = Astro.props;
+const { Content, headings } = await render(entry);
+const post = entry;
+
+// Format date
+const formattedDate = new Date(post.data.date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+}).toUpperCase();
+---
+
+<BaseLayout title={`${post.data.title} | David Contreras`} description={post.data.excerpt}>
+  <TopNavBar currentPath="/blog" />
+
+  <main class="pt-32 pb-[var(--spacing-section-gap)] max-w-7xl mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]">
+    <!-- Breadcrumbs -->
+    <nav class="mb-8 flex items-center gap-2 text-sm">
+      <a href="/" class="text-on-surface-variant hover:text-secondary transition-colors">Portfolio</a>
+      <span class="text-on-surface-variant">→</span>
+      <a href="/blog" class="text-on-surface-variant hover:text-secondary transition-colors">Technical Blog</a>
+      <span class="text-on-surface-variant">→</span>
+      <span class="text-primary font-bold">Deep Dive</span>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="mb-[var(--spacing-section-gap)] max-w-4xl">
+      <div class="mb-6">
+        <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">
+          {formattedDate} • {post.data.readingTime} MIN READ
+        </span>
+      </div>
+
+      <h1 class="mb-6 headline-responsive">
+        {post.data.title}
+      </h1>
+
+      <div class="flex flex-wrap gap-2">
+        {post.data.tags.map((tag: string) => (
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] border border-outline-variant px-3 py-1">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <div class="grid grid-cols-12 gap-[var(--spacing-gutter)] items-start">
+      <!-- Table of Contents (Left Sidebar) -->
+      <aside class="hidden lg:block col-span-2 sticky top-24">
+        <div class="space-y-2">
+          <h3 class="text-on-surface-variant mb-4 uppercase" style="font-family: var(--font-label-mono); font-size: var(--font-size-label-mono); line-height: var(--font-size-label-mono--line-height); font-weight: var(--font-size-label-mono--font-weight); letter-spacing: var(--font-size-label-mono--letter-spacing);">
+            Contents
+          </h3>
+          <nav class="space-y-2" id="toc">
+            {headings.map((heading) => (
+              <a
+                href={`#${heading.slug}`}
+                class="block text-sm text-on-surface-variant hover:text-secondary transition-colors toc-link"
+                style={`padding-left: ${(heading.depth - 1) * 12}px`}
+                data-heading-slug={heading.slug}
+              >
+                {heading.text}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Article Content -->
+      <article class="col-span-12 lg:col-span-7">
+        <div class="prose prose-lg max-w-none
+          prose-headings:font-[var(--font-headline-md)]
+          prose-headings:text-primary
+          prose-p:text-on-surface
+          prose-p:leading-relaxed
+          prose-a:text-secondary
+          prose-a:no-underline
+          prose-a:hover:underline
+          prose-strong:text-primary
+          prose-strong:font-bold
+          prose-code:font-[var(--font-code-block)]
+          prose-code:text-secondary
+          prose-code:bg-surface-container-highest
+          prose-code:px-1
+          prose-code:py-0.5
+          prose-pre:bg-surface-container-low
+          prose-pre:border
+          prose-pre:border-outline-variant
+          prose-pre:p-4
+          prose-blockquote:border-l-4
+          prose-blockquote:border-secondary
+          prose-blockquote:pl-4
+          prose-blockquote:italic
+          prose-ul:list-disc
+          prose-ol:list-decimal
+        ">
+          <Content />
+        </div>
+      </article>
+
+      <!-- Performance Metrics Sidebar (Right) -->
+      <aside class="col-span-12 lg:col-span-3 space-y-6">
+        <!-- Key Metrics -->
+        <div class="bg-surface border border-outline-variant p-6 sticky top-24">
+          <h3 class="text-primary mb-6 uppercase" style="font-family: var(--font-label-mono); font-size: var(--font-size-label-mono); line-height: var(--font-size-label-mono--line-height); font-weight: var(--font-size-label-mono--font-weight); letter-spacing: var(--font-size-label-mono--letter-spacing);">
+            Key Metrics
+          </h3>
+          <div class="space-y-6">
+            <div>
+              <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant mb-1">
+                Development Time
+              </p>
+              <p class="font-[var(--font-headline-md)] text-[var(--font-size-headline-md)] text-primary">
+                60-70 hours
+              </p>
+            </div>
+            <div>
+              <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant mb-1">
+                Lines of Code
+              </p>
+              <p class="font-[var(--font-headline-md)] text-[var(--font-size-headline-md)] text-primary">
+                10,000+
+              </p>
+            </div>
+            <div>
+              <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant mb-1">
+                Test Coverage
+              </p>
+              <p class="font-[var(--font-headline-md)] text-[var(--font-size-headline-md)] text-primary">
+                85%
+              </p>
+            </div>
+            <div>
+              <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant mb-1">
+                Production Crashes
+              </p>
+              <p class="font-[var(--font-headline-md)] text-[var(--font-size-headline-md)] text-secondary">
+                0
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Takeaways -->
+        <div class="bg-primary-container border border-outline-variant p-6">
+          <h3 class="text-on-primary-container mb-4 uppercase" style="font-family: var(--font-label-mono); font-size: var(--font-size-label-mono); line-height: var(--font-size-label-mono--line-height); font-weight: var(--font-size-label-mono--font-weight); letter-spacing: var(--font-size-label-mono--letter-spacing);">
+            Key Takeaway
+          </h3>
+          <p class="text-on-primary-container italic leading-relaxed">
+            "AI amplifies expertise, doesn't replace it. My 10 years of QA experience informed which AI suggestions to accept vs reject."
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Pagination -->
+    {(previousPost || nextPost) && (
+      <div class="mt-[var(--spacing-section-gap)] pt-12 border-t border-outline-variant">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {previousPost && (
+            <a
+              href={`/blog/${previousPost.slug}`}
+              class="group p-6 bg-surface-container-lowest border border-outline-variant hover:border-secondary transition-colors"
+            >
+              <div class="flex items-center gap-2 mb-3">
+                <span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">arrow_back</span>
+                <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">
+                  PREVIOUS
+                </span>
+              </div>
+              <h3 class="font-[var(--font-headline-sm)] text-[var(--font-size-headline-sm)] text-primary group-hover:text-secondary transition-colors">
+                {previousPost.data.title}
+              </h3>
+            </a>
+          )}
+          {nextPost && (
+            <a
+              href={`/blog/${nextPost.slug}`}
+              class="group p-6 bg-surface-container-lowest border border-outline-variant hover:border-secondary transition-colors md:text-right"
+            >
+              <div class="flex items-center justify-end gap-2 mb-3">
+                <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">
+                  NEXT
+                </span>
+                <span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">arrow_forward</span>
+              </div>
+              <h3 class="font-[var(--font-headline-sm)] text-[var(--font-size-headline-sm)] text-primary group-hover:text-secondary transition-colors">
+                {nextPost.data.title}
+              </h3>
+            </a>
+          )}
+        </div>
+      </div>
+    )}
+  </main>
+
+  <!-- Scroll to Top Button -->
+  <button
+    id="scroll-to-top"
+    class="fixed bottom-8 right-8 bg-primary text-on-primary p-4 shadow-lg opacity-0 pointer-events-none transition-opacity duration-300"
+    aria-label="Scroll to top"
+  >
+    <span class="material-symbols-outlined" style="font-size: 24px;">arrow_upward</span>
+  </button>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  // Scroll to top button visibility
+  const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollToTopBtn?.classList.remove('opacity-0', 'pointer-events-none');
+      scrollToTopBtn?.classList.add('opacity-100');
+    } else {
+      scrollToTopBtn?.classList.add('opacity-0', 'pointer-events-none');
+      scrollToTopBtn?.classList.remove('opacity-100');
+    }
+  });
+
+  scrollToTopBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Active TOC highlighting on scroll
+  const tocLinks = document.querySelectorAll('.toc-link');
+  const headings = document.querySelectorAll('article h1, article h2, article h3, article h4');
+
+  const observerOptions = {
+    rootMargin: '-20% 0px -35% 0px',
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        tocLinks.forEach((link) => {
+          link.classList.remove('text-secondary', 'font-bold');
+          link.classList.add('text-on-surface-variant');
+
+          if (link.getAttribute('data-heading-slug') === id) {
+            link.classList.remove('text-on-surface-variant');
+            link.classList.add('text-secondary', 'font-bold');
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  headings.forEach((heading) => observer.observe(heading));
+</script>
+
+<style>
+  .headline-responsive {
+    font-family: var(--font-headline-xl-mobile);
+    font-size: var(--font-size-headline-xl-mobile);
+    line-height: var(--font-size-headline-xl-mobile--line-height);
+    font-weight: var(--font-size-headline-xl-mobile--font-weight);
+  }
+
+  @media (min-width: 768px) {
+    .headline-responsive {
+      font-family: var(--font-headline-xl);
+      font-size: var(--font-size-headline-xl);
+      line-height: var(--font-size-headline-xl--line-height);
+      font-weight: var(--font-size-headline-xl--font-weight);
+      letter-spacing: var(--font-size-headline-xl--letter-spacing);
+    }
+  }
+</style>

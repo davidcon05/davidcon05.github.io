@@ -1,0 +1,51 @@
+---
+const { post, isLatest = false } = Astro.props;
+---
+
+<article class={`technical-card ${isLatest ? 'bg-primary-container' : 'bg-surface-container-lowest'} border p-[var(--spacing-gutter)]`} style={isLatest ? 'border-color: #acedff;' : 'border-color: var(--color-outline-variant);'}>
+  <div class="flex flex-col md:flex-row justify-between items-start mb-[var(--spacing-base)]">
+    <span class={`font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] mb-[var(--spacing-base)] md:mb-0 ${isLatest ? 'text-white opacity-90' : 'text-on-surface-variant'}`}>
+      {post.date} • {post.readTime} MIN READ
+    </span>
+    {post.status && (
+      <div class="flex gap-2">
+        <span class={`font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] px-2 py-0.5 ${isLatest ? '' : 'bg-surface-container-highest text-secondary'}`} style={isLatest ? 'background-color: #ffffff; color: #131b2e;' : ''}>
+          {post.status}
+        </span>
+      </div>
+    )}
+  </div>
+
+  <a href={`/blog/${post.slug}`}>
+    <h2 class={`mb-4 transition-colors cursor-pointer ${isLatest ? 'hover-cyan' : ''}`} style={`font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight); ${isLatest ? 'color: #acedff;' : ''}`}>
+      {post.title}
+    </h2>
+  </a>
+
+  <p class={`mb-6 leading-relaxed ${isLatest ? 'text-white opacity-80' : 'text-on-surface-variant'}`}>
+    {post.excerpt}
+  </p>
+
+  <div class="flex flex-wrap gap-2 mb-8">
+    {post.tags.map((tag: string) => (
+      <span class={`font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] border px-3 py-1 ${isLatest ? 'border-white text-white' : 'border-outline-variant'}`}>
+        {tag}
+      </span>
+    ))}
+  </div>
+
+  <a
+    class={`inline-flex items-center gap-2 font-bold hover:gap-4 transition-all ${isLatest ? 'hover-cyan' : 'text-primary'}`}
+    style={isLatest ? 'color: #acedff;' : ''}
+    href={`/blog/${post.slug}`}
+  >
+    READ FULL ARTICLE
+    <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+  </a>
+</article>
+
+<style>
+  .hover-cyan:hover {
+    color: #4cd7f6 !important;
+  }
+</style>

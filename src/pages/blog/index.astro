@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopNavBar from '../../components/TopNavBar.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+// Get all blog posts
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) =>
+  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<BaseLayout title="David Contreras | Engineering Blog">
+  <TopNavBar currentPath="/blog" />
+
+  <main class="pt-32 pb-[var(--spacing-section-gap)] max-w-7xl mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]">
+    <!-- Hero Section -->
+    <header class="mb-[var(--spacing-section-gap)] max-w-4xl">
+      <h1 class="mb-[var(--spacing-gutter)] headline-responsive">
+        Thoughts on Engineering, Testing, and Building Quality Software.
+      </h1>
+      <p class="font-[var(--font-body-lg)] text-[var(--font-size-body-lg)] text-on-surface-variant leading-relaxed">
+        A collection of technical deep-dives, testing strategies, and experiments
+        in building quality software with AI-assisted development.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-12 gap-[var(--spacing-gutter)] items-start">
+      <!-- Main Content: Blog Feed -->
+      <section class="col-span-12 lg:col-span-8 space-y-[var(--spacing-gutter)] order-1">
+        {sortedPosts.map((post, index) => (
+          <BlogCard
+            post={{
+              title: post.data.title,
+              date: new Date(post.data.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              }).toUpperCase(),
+              readTime: post.data.readingTime,
+              excerpt: post.data.excerpt,
+              tags: post.data.tags,
+              status: post.data.status,
+              slug: post.id,
+            }}
+            isLatest={index === 0}
+          />
+        ))}
+      </section>
+
+      <!-- Sidebar -->
+      <aside class="col-span-12 lg:col-span-4 order-2">
+        <Sidebar />
+      </aside>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .headline-responsive {
+    font-family: var(--font-headline-lg);
+    font-size: var(--font-size-headline-lg);
+    line-height: var(--font-size-headline-lg--line-height);
+    font-weight: var(--font-size-headline-lg--font-weight);
+  }
+
+  @media (min-width: 768px) {
+    .headline-responsive {
+      font-family: var(--font-headline-xl);
+      font-size: var(--font-size-headline-xl);
+      line-height: var(--font-size-headline-xl--line-height);
+      font-weight: var(--font-size-headline-xl--font-weight);
+      letter-spacing: var(--font-size-headline-xl--letter-spacing);
+    }
+  }
+</style>
+
+<script>
+  // Micro-interaction: Subtle hover parallax for cards
+  document.querySelectorAll('.technical-card').forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+</script>

@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopNavBar from '../components/TopNavBar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="About | David Contreras" description="Senior Test Lead building production software with AI-assisted development and rigorous testing standards.">
+  <TopNavBar currentPath="/about" />
+
+  <main class="max-w-7xl mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)] py-[var(--spacing-section-gap)]">
+    <!-- Hero Section / Asymmetric Intro -->
+    <section class="grid grid-cols-1 md:grid-cols-12 gap-[var(--spacing-gutter)] mb-[var(--spacing-section-gap)]">
+      <div class="md:col-span-7 flex flex-col justify-center">
+        <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 uppercase tracking-widest">
+          Philosophy & Identity
+        </span>
+        <h1 class="mb-8 headline-responsive">
+          Engineering with <span class="text-outline">Intentionality.</span>
+        </h1>
+        <p class="font-[var(--font-body-lg)] text-[var(--font-size-body-lg)] text-on-surface-variant max-w-xl">
+          I view code not just as a set of instructions, but as a long-term architectural commitment. My philosophy centers on the "API-First" mindset—designing interfaces that are intuitive for machines and humans alike.
+        </p>
+      </div>
+
+      <div class="md:col-span-5 relative">
+        <div class="aspect-square w-full bg-surface-container-low overflow-hidden rounded-lg border border-outline-variant hover:border-secondary transition-colors">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLCO4YE9RWFQ9zF0iaFQjkdtSZI-hL4EypXFbXvE39lX89GbNemaZoQHDfGuBJoLxqlDK5YhLsdgEuRuhtXtu5ocQ_07agb_nPGVLfgCyehY7iAYktOVcr2saqVcFnUUcMS8CgKDwM78EttzcFBmfSM42OwPdp3WkToZyFKlvXcyQpnN1RQFU7FO0JjzuVe2m3wMGhH2OHPjfAX4baGevA2M243S-hYcGXpCvsiT41vb-Yq9VZXvlHdVvZjkE1x4YyGp2MofGJpw"
+              alt="Professional portrait"
+              class="w-full h-full object-cover grayscale contrast-125"
+            />
+          </div>
+
+          <!-- Floating Terminal Badge -->
+          <div class="absolute -bottom-4 -left-4 bg-primary-container text-on-primary p-4 rounded shadow-xl hidden md:block terminal-badge">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-3 h-3 rounded-full bg-error"></span>
+              <span class="w-3 h-3 rounded-full bg-tertiary-fixed"></span>
+              <span class="w-3 h-3 rounded-full bg-secondary"></span>
+            </div>
+            <code class="font-[var(--font-code-block)] text-[var(--font-size-code-block)] text-primary-fixed-dim">
+              status: active_and_curious<br/>
+              focus: scalable_systems
+            </code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid: Bio & Technical Stance -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-[var(--spacing-gutter)] mb-[var(--spacing-section-gap)]">
+      <!-- Technical Pedigree (CORE_EXPERTISE Style) -->
+      <div class="md:col-span-2 bg-primary-container p-8 rounded-lg flex items-center justify-between overflow-hidden border-2 border-secondary">
+        <div class="flex-grow">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="material-symbols-outlined text-3xl" style="color: #acedff;">workspace_premium</span>
+            <h3 class="uppercase tracking-wider font-bold" style="font-family: var(--font-label-mono); font-size: 18px; letter-spacing: 0.15em; color: #acedff;">
+              TECHNICAL_PEDIGREE
+            </h3>
+          </div>
+          <h3 class="mb-6 text-white" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+            24 Releases. 18 Months. Zero Critical Bugs.
+          </h3>
+          <div class="space-y-4 font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-white">
+            <p>
+              With over a decade in the stack, I've transitioned from tactical coding to strategic system design. I believe in <strong style="color: #acedff;">performance-first architectures</strong> and <strong style="color: #acedff;">documentation as a first-class citizen</strong>.
+            </p>
+            <p>
+              My approach is rooted in the belief that software should be robust enough to survive the unknown and simple enough to be maintained by anyone.
+            </p>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <div class="flex items-center gap-2 border border-white px-3 py-2 rounded">
+              <span class="material-symbols-outlined" style="font-size: 16px; color: #acedff;">verified</span>
+              <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-white">Mastery: Swift & Kotlin</span>
+            </div>
+            <div class="flex items-center gap-2 border border-white px-3 py-2 rounded">
+              <span class="material-symbols-outlined" style="font-size: 16px; color: #acedff;">hub</span>
+              <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-white">Focus: Mobile Testing</span>
+            </div>
+          </div>
+        </div>
+        <div class="opacity-10 text-white ml-8 hidden lg:block">
+          <span class="material-symbols-outlined text-[120px]">verified</span>
+        </div>
+      </div>
+
+      <!-- Links Card -->
+      <div class="flat-depth-card p-8 flex flex-col justify-between">
+        <div>
+          <h3 class="mb-6" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+            Digital Footprint
+          </h3>
+          <ul class="space-y-4">
+            <li>
+              <a
+                href="https://github.com/davidcon05"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex items-center justify-between py-2 border-b border-outline-variant hover:border-secondary transition-all"
+              >
+                <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-primary">GitHub</span>
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform text-primary">arrow_forward</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/dbcontreras/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex items-center justify-between py-2 border-b border-outline-variant hover:border-secondary transition-all"
+              >
+                <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-primary">LinkedIn</span>
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform text-primary">arrow_forward</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <a href="/dcontreras-resume-2026.pdf" download class="mt-8 w-full bg-primary text-on-primary py-4 font-bold font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] flex items-center justify-center gap-2 hover:bg-on-surface transition-colors">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">download</span>
+          DOWNLOAD RESUME (PDF)
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="max-w-2xl">
+      <h2 class="mb-4" style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+        Let's build something <span class="text-secondary">meaningful</span>.
+      </h2>
+      <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-8">
+        Currently available for senior architectural roles or high-impact consulting projects. I respond to technical inquiries within 24 hours.
+      </p>
+
+      <div class="space-y-6">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined">mail</span>
+          </div>
+          <div>
+            <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] uppercase text-outline mb-1">
+              Direct Email
+            </p>
+            <a
+              href="mailto:david.b.contreras@gmail.com"
+              class="font-[var(--font-body-lg)] text-[var(--font-size-body-lg)] font-semibold hover:text-secondary transition-colors block"
+            >
+              david.b.contreras@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined">location_on</span>
+          </div>
+          <div>
+            <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] uppercase text-outline mb-1">
+              Base Operations
+            </p>
+            <p class="font-[var(--font-body-lg)] text-[var(--font-size-body-lg)] font-semibold">
+              Raleigh, NC (Remote Friendly)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .headline-responsive {
+    font-family: var(--font-headline-lg);
+    font-size: var(--font-size-headline-lg);
+    line-height: var(--font-size-headline-lg--line-height);
+    font-weight: var(--font-size-headline-lg--font-weight);
+  }
+
+  @media (min-width: 768px) {
+    .headline-responsive {
+      font-family: var(--font-headline-xl);
+      font-size: var(--font-size-headline-xl);
+      line-height: var(--font-size-headline-xl--line-height);
+      font-weight: var(--font-size-headline-xl--font-weight);
+      letter-spacing: var(--font-size-headline-xl--letter-spacing);
+    }
+  }
+</style>
+
+<script>
+  // Micro-interaction for the terminal badge
+  const badge = document.querySelector('.terminal-badge');
+  if (badge) {
+    badge.addEventListener('mouseenter', () => {
+      (badge as HTMLElement).style.transform = 'translateY(-10px) rotate(-1deg)';
+    });
+    badge.addEventListener('mouseleave', () => {
+      (badge as HTMLElement).style.transform = 'translateY(0) rotate(0)';
+    });
+    (badge as HTMLElement).style.transition = 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+  }
+</script>

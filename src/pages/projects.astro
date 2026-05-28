@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopNavBar from '../components/TopNavBar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Projects | David Contreras" description="Selected works showcasing mobile quality engineering, iOS development, and full-stack solutions.">
+  <TopNavBar currentPath="/projects" />
+
+  <main class="pt-32 pb-[var(--spacing-section-gap)] max-w-7xl mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]">
+    <!-- Hero Section -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-[var(--spacing-gutter)]">
+        <div class="max-w-2xl">
+          <div class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4" style="line-height: var(--font-size-label-mono--line-height); font-weight: var(--font-size-label-mono--font-weight); letter-spacing: var(--font-size-label-mono--letter-spacing);">
+            DIRECTORY_V2.0
+          </div>
+          <h1 class="text-primary headline-responsive">
+            Selected Works
+          </h1>
+          <p class="font-[var(--font-body-lg)] text-[var(--font-size-body-lg)] text-on-surface-variant mt-6" style="line-height: var(--font-size-body-lg--line-height); font-weight: var(--font-size-body-lg--font-weight);">
+            A curated collection of production applications, experimental tools, and side projects demonstrating end-to-end ownership from concept to deployment.
+          </p>
+        </div>
+        <div class="flex-shrink-0">
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] border border-outline-variant px-3 py-1 bg-surface-container-lowest whitespace-nowrap inline-block" style="line-height: var(--font-size-label-mono--line-height); font-weight: var(--font-size-label-mono--font-weight); letter-spacing: var(--font-size-label-mono--letter-spacing);">
+            TOTAL_OBJECTS: 04
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Grid -->
+    <div class="flex flex-col gap-[var(--spacing-gutter)]">
+      <!-- Row 1: FieldNote (66.66%) + A1C Tracker (33.33%) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-[var(--spacing-gutter)]">
+        <!-- Project 01: FieldNote (Featured - 2 columns) -->
+        <article class="md:col-span-2 group border border-outline-variant bg-surface-container-lowest p-6 md:p-10 transition-all duration-300 hover:border-secondary">
+        <div class="flex flex-col h-full">
+          <div class="flex justify-between items-start mb-8">
+            <div>
+              <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary uppercase mb-2 block">iOS Application</span>
+              <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+                FieldNote
+              </h2>
+            </div>
+            <div class="flex gap-3">
+              <a class="p-2 border border-outline-variant hover:bg-surface-container transition-colors" href="https://github.com/dcontreras11/FieldNote" target="_blank" title="View Source">
+                <span class="material-symbols-outlined">code</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="mb-10 aspect-video overflow-hidden border border-outline-variant bg-surface-container-low relative">
+            <div class="w-full h-full flex items-center justify-center text-on-surface-variant">
+              <span class="material-symbols-outlined text-6xl opacity-20">image</span>
+            </div>
+          </div>
+
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-8 max-w-xl">
+            A production-ready iOS application for environmental field research, enabling scientists to capture observations, weather data, and location information in real-time. Built with SwiftUI, SwiftData, and CloudKit for seamless sync across devices.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container-low px-2 py-1 rounded">SWIFT</span>
+            <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container-low px-2 py-1 rounded">SWIFTUI</span>
+            <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container-low px-2 py-1 rounded">SWIFTDATA</span>
+            <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container-low px-2 py-1 rounded">CLOUDKIT</span>
+          </div>
+
+          <div class="mt-auto pt-8 border-t border-outline-variant">
+            <h4 class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-primary mb-4">RELATED_RESOURCES</h4>
+            <ul class="space-y-3">
+              <li>
+                <a class="group/link flex items-center justify-between font-[var(--font-body-md)] text-[var(--font-size-body-md)] hover:text-secondary transition-colors" href="/blog/building-fieldnote-with-ai">
+                  <span class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-[18px]">article</span>
+                    Building FieldNote: AI-Assisted iOS Development
+                  </span>
+                  <span class="font-[var(--font-label-mono)] text-[12px] opacity-0 group-hover/link:opacity-100 transition-opacity">READ_MORE</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+        <!-- Project 02: A1C Health Tracker (Sidebar - 1 column) -->
+        <article class="border border-outline-variant bg-surface-container-lowest p-6 transition-all duration-300 hover:border-secondary">
+        <div class="flex flex-col h-full">
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant uppercase mb-2 block">Health & Wellness</span>
+          <h2 class="font-[var(--font-headline-md)] text-[var(--font-size-headline-md)] text-primary mb-4" style="line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+            A1C Health Tracker
+          </h2>
+
+          <div class="mb-6 aspect-square overflow-hidden border border-outline-variant bg-surface-container-low">
+            <div class="w-full h-full flex items-center justify-center text-on-surface-variant">
+              <span class="material-symbols-outlined text-6xl opacity-20">monitoring_health</span>
+            </div>
+          </div>
+
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6">
+            Personal health gamification app designed to lower A1C levels through habit tracking and behavioral nudges.
+          </p>
+
+          <div class="mb-8">
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] px-2 py-1 bg-surface-container text-on-surface-variant">SWIFTUI</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] px-2 py-1 bg-surface-container text-on-surface-variant border border-tertiary-fixed">ARCHIVED</span>
+            </div>
+          </div>
+
+          <div class="mt-auto flex flex-col gap-4">
+            <div class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant italic">
+              "Built it, used it, achieved goal, archived it."
+            </div>
+          </div>
+        </div>
+        </article>
+      </div>
+
+      <!-- Row 2: NFC Menu System + SecureVault -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-[var(--spacing-gutter)]">
+        <!-- Project 03: NFC Menu System (takes 1 column) -->
+        <article class="border border-outline-variant bg-surface-container-lowest p-6 transition-all duration-300 hover:border-secondary min-h-[200px]">
+        <div class="flex justify-between items-start mb-6 gap-4">
+          <h3 class="font-[var(--font-headline-md)] text-[var(--font-size-headline-md)] text-primary flex-1" style="line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+            NFC Menu System
+          </h3>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] border border-outline-variant px-2 py-0.5 whitespace-nowrap">NDA</span>
+        </div>
+        <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-8">
+          Contactless menu system leveraging NFC technology for restaurants during COVID-19.
+        </p>
+        <div class="flex justify-between items-center pt-6 border-t border-outline-variant">
+          <span class="text-secondary font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] hover:underline cursor-pointer">CODE_AVAILABLE</span>
+          <span class="material-symbols-outlined text-outline">arrow_forward</span>
+        </div>
+        </article>
+
+        <!-- Project 04: SecureVault (takes 1 column) -->
+        <article class="border border-outline-variant bg-surface-container-lowest p-6 transition-all duration-300 hover:border-secondary min-h-[200px]">
+        <div class="flex justify-between items-start mb-6 gap-4">
+          <h3 class="font-[var(--font-headline-md)] text-[var(--font-size-headline-md)] text-primary flex-1" style="line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+            SecureVault
+          </h3>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] border border-outline-variant px-2 py-0.5 whitespace-nowrap">V1.0</span>
+        </div>
+        <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-8">
+          E2E encrypted secrets management tool with Django-powered backend and security-first architecture.
+        </p>
+        <div class="flex justify-between items-center pt-6 border-t border-outline-variant">
+          <span class="text-secondary font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] hover:underline cursor-pointer">CODE_AVAILABLE</span>
+          <span class="material-symbols-outlined text-outline">arrow_forward</span>
+        </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  article:hover img {
+    transform: scale(1.05);
+  }
+
+  .headline-responsive {
+    font-family: var(--font-headline-xl-mobile);
+    font-size: var(--font-size-headline-xl-mobile);
+    line-height: var(--font-size-headline-xl-mobile--line-height);
+    font-weight: var(--font-size-headline-xl-mobile--font-weight);
+  }
+
+  @media (min-width: 768px) {
+    .headline-responsive {
+      font-family: var(--font-headline-xl);
+      font-size: var(--font-size-headline-xl);
+      line-height: var(--font-size-headline-xl--line-height);
+      font-weight: var(--font-size-headline-xl--font-weight);
+      letter-spacing: var(--font-size-headline-xl--letter-spacing);
+    }
+  }
+</style>

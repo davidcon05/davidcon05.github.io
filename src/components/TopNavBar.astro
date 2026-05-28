@@ -1,0 +1,96 @@
+---
+const { currentPath } = Astro.props;
+---
+
+<nav class="fixed z-50 bg-surface border-b border-outline-variant w-full top-0">
+  <div class="flex justify-between items-center w-full px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)] max-w-7xl mx-auto h-16">
+    <a href="/" class="font-[var(--font-headline-md)] text-[var(--font-size-headline-md)] font-bold text-primary">
+      David Contreras
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-8 ml-auto">
+      <a
+        class={currentPath === '/blog'
+          ? 'text-primary font-bold border-b-2 border-primary pb-1 transition-colors'
+          : 'text-on-surface-variant hover:text-secondary transition-colors'
+        }
+        href="/blog"
+      >
+        Blog
+      </a>
+      <a
+        class={currentPath === '/skills'
+          ? 'text-primary font-bold border-b-2 border-primary pb-1 transition-colors'
+          : 'text-on-surface-variant hover:text-secondary transition-colors'
+        }
+        href="/skills"
+      >
+        Skills
+      </a>
+      <a
+        class={currentPath === '/about'
+          ? 'text-primary font-bold border-b-2 border-primary pb-1 transition-colors'
+          : 'text-on-surface-variant hover:text-secondary transition-colors'
+        }
+        href="/about"
+      >
+        About
+      </a>
+    </div>
+
+    <!-- Mobile Hamburger Button -->
+    <button
+      id="mobile-menu-button"
+      class="md:hidden p-2 text-primary"
+      aria-label="Toggle menu"
+    >
+      <span class="material-symbols-outlined text-[28px]">menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-surface border-b border-outline-variant"
+  >
+    <div class="flex flex-col px-[var(--spacing-margin-mobile)] py-4 space-y-4">
+      <a
+        class={currentPath === '/blog'
+          ? 'text-primary font-bold py-2'
+          : 'text-on-surface-variant py-2'
+        }
+        href="/blog"
+      >
+        Blog
+      </a>
+      <a
+        class={currentPath === '/skills'
+          ? 'text-primary font-bold py-2'
+          : 'text-on-surface-variant py-2'
+        }
+        href="/skills"
+      >
+        Skills
+      </a>
+      <a
+        class={currentPath === '/about'
+          ? 'text-primary font-bold py-2'
+          : 'text-on-surface-variant py-2'
+        }
+        href="/about"
+      >
+        About
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>
