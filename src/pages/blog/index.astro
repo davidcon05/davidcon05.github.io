@@ -31,7 +31,7 @@ const sortedPosts = allPosts.sort((a, b) =>
     <div class="grid grid-cols-12 gap-[var(--spacing-gutter)] items-start">
       <!-- Main Content: Blog Feed -->
       <section class="col-span-12 lg:col-span-8 space-y-[var(--spacing-gutter)] order-1">
-        {sortedPosts.map((post, index) => (
+        {sortedPosts.map((post) => (
           <BlogCard
             post={{
               title: post.data.title,
@@ -43,10 +43,8 @@ const sortedPosts = allPosts.sort((a, b) =>
               readTime: post.data.readingTime,
               excerpt: post.data.excerpt,
               tags: post.data.tags,
-              status: post.data.status,
               slug: post.id,
             }}
-            isLatest={index === 0}
           />
         ))}
       </section>

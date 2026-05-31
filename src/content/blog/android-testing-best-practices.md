@@ -11,8 +11,6 @@ series: "Mobile Testing"
 seriesOrder: 1
 ---
 
-# Modern Android Testing Strategies: Lessons from Quality Engineering
-
 **The Problem:**  
 The Android ecosystem is vast, fragmented, and heavily dependent on third-party libraries. Without a deliberate plan, keeping up with testing can feel like trying to plug a colander with your fingers.  
 

@@ -16,13 +16,11 @@ metrics:
     value: "~850"
   - label: "UI Tests"
     value: "~150"
-  - label: "Regression Cycle"
+  - label: "Manual Regression"
     value: "~1 hour"
-  - label: "Regression Window"
+  - label: "Regression Cycle"
     value: "~72 hours"
 ---
-
-# How I Shipped 39 Mobile Releases Without a Critical Bug
 
 > A note before we get into it — these results didn't happen because of me. They happened because of the engineering team I had the privilege of working alongside. Software development is a team sport, and every developer, designer, and product manager on that team made contributions just as critical as anything on the QA side. This one's for them.
 
