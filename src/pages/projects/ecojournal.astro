@@ -1,0 +1,245 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopNavBar from '../../components/TopNavBar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="EcoJournal | David Contreras" description="A GPS-powered field research journal built for one scientist. Now heading to the App Store.">
+  <TopNavBar currentPath="/projects" />
+
+  <main class="pt-32 pb-[var(--spacing-section-gap)] max-w-7xl mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]">
+
+    <!-- Breadcrumb -->
+    <nav class="mb-8">
+      <a href="/projects" class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant hover:text-secondary transition-colors inline-flex items-center gap-1">
+        <span class="material-symbols-outlined" style="font-size: 16px;">arrow_back</span>
+        PROJECTS
+      </a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="mb-16">
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary uppercase">iOS Application</span>
+        <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] px-2 py-0.5 border" style="border-color: #4cd7f6; color: #4cd7f6;">IN TESTFLIGHT</span>
+      </div>
+      <h1 class="mb-6" style="font-family: var(--font-headline-xl); font-size: var(--font-size-headline-xl); line-height: var(--font-size-headline-xl--line-height); font-weight: var(--font-size-headline-xl--font-weight); letter-spacing: var(--font-size-headline-xl--letter-spacing);">
+        EcoJournal
+      </h1>
+      <p class="font-[var(--font-body-lg)] text-[var(--font-size-body-lg)] text-on-surface-variant max-w-2xl mb-4" style="line-height: var(--font-size-body-lg--line-height);">
+        My wife and I met in a Biology class. I've watched her do field work — GPS unit in one hand, voice recorder in the other, a separate camera, a weather app open on her phone, and a notebook for location notes she'd have to manually map out later. Every measurement on a different device. Every analysis starting with a data consolidation problem.
+      </p>
+      <p class="font-[var(--font-body-lg)] text-[var(--font-size-body-lg)] text-on-surface-variant max-w-2xl mb-8" style="line-height: var(--font-size-body-lg--line-height);">
+        She's an environmental scientist. Her tools should work as hard as she does. EcoJournal replaces all of it — GPS-tagged observations, auto weather logging, voice-to-text field notes, multi-photo galleries, and an interactive map of every site she's visited. Four weekends. Zero production crashes.
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <div class="flex items-center gap-2 border border-outline-variant px-4 py-2">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 16px;">schedule</span>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">4 Weekends (~60 hrs)</span>
+        </div>
+        <div class="flex items-center gap-2 border border-outline-variant px-4 py-2">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 16px;">code</span>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">10,000+ lines of Swift</span>
+        </div>
+        <div class="flex items-center gap-2 border border-outline-variant px-4 py-2">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 16px;">verified</span>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">85%+ test coverage · 105 automated tests</span>
+        </div>
+        <div class="flex items-center gap-2 border border-outline-variant px-4 py-2">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 16px;">bug_report</span>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">0 production crashes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Video Stub -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="border-2 border-dashed border-secondary bg-surface-container-low flex flex-col items-center justify-center gap-4 p-16 text-center">
+        <span class="material-symbols-outlined text-secondary" style="font-size: 56px;">videocam</span>
+        <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">📹 DAVE: Film a 60-second walkthrough.</p>
+        <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant max-w-md">Show the full loop: create a journal → add a log → GPS auto-fills → drop a voice note → watch it transcribe → open the map. That's the story. Keep it under a minute.</p>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="flex items-center gap-4 mb-12">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          What It Does
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="space-y-[var(--spacing-section-gap)]">
+
+        <!-- Feature 1: GPS + Map -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-center">
+          <div>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">FEATURE 01</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Every Observation, Mapped.
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
+              Tap to log — the app stamps the entry with your exact coordinates automatically. No manual input, no forgetting to record the location, no guessing later. Every entry is a pin on an interactive map, so you can see your field work geographically, spot patterns across sites, and navigate back to any point you've logged.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">GPS AUTO-CAPTURE</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">MAPKIT</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">OFFLINE SATELLITE</span>
+            </div>
+          </div>
+          <div class="border border-dashed border-outline-variant bg-surface-container-low flex flex-col items-center justify-center gap-3 p-12 min-h-[320px] text-center">
+            <span class="material-symbols-outlined text-outline-variant" style="font-size: 48px;">map</span>
+            <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">📸 DAVE</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">The map view with a few observation pins. This is your best screenshot. Use it.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2: Voice-to-Text -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-center">
+          <div class="order-2 md:order-1 border border-dashed border-outline-variant bg-surface-container-low flex flex-col items-center justify-center gap-3 p-12 min-h-[320px] text-center">
+            <span class="material-symbols-outlined text-outline-variant" style="font-size: 48px;">mic</span>
+            <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">📸 DAVE</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">Recording in progress + the transcribed text below it. Side-by-side if you can swing it.</p>
+          </div>
+          <div class="order-1 md:order-2">
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">FEATURE 02</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Your Hands Are Busy. Your Notes Don't Have to Wait.
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
+              Field researchers don't have a free hand to type. Tap record, speak your observation, and EcoJournal transcribes it to searchable text. When you're back at your desk, every spoken note is already there — readable, searchable, and attached to exactly where you were standing when you said it.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">SPEECH-TO-TEXT</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">AVFOUNDATION</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">SEARCHABLE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3: Weather Logging -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-center">
+          <div>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">FEATURE 03</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Environmental Context, Automatically.
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
+              Every log entry is automatically stamped with current temperature, humidity, sky conditions, and wind. No separate weather app, no manual entry, no trying to remember what it felt like out there three weeks later. Your data always has its environmental context.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">OPENWEATHERMAP API</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">AUTO-CAPTURE</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">FREE TIER</span>
+            </div>
+          </div>
+          <div class="border border-dashed border-outline-variant bg-surface-container-low flex flex-col items-center justify-center gap-3 p-12 min-h-[320px] text-center">
+            <span class="material-symbols-outlined text-outline-variant" style="font-size: 48px;">partly_cloudy_day</span>
+            <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">📸 DAVE</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">A log entry showing the weather data block — temp, humidity, conditions. Yes, the one you already have in TestFlight.</p>
+          </div>
+        </div>
+
+        <!-- Feature 4: Offline-first -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-center">
+          <div class="order-2 md:order-1 border border-dashed border-outline-variant bg-surface-container-low flex flex-col items-center justify-center gap-3 p-12 min-h-[320px] text-center">
+            <span class="material-symbols-outlined text-outline-variant" style="font-size: 48px;">signal_wifi_off</span>
+            <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">📸 DAVE</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">Honestly anything showing the app working — she's probably already tested this in the field. Ask her for a screenshot.</p>
+          </div>
+          <div class="order-1 md:order-2">
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">FEATURE 04</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Cell Service Is a City Thing.
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
+              EcoJournal stores everything locally. GPS works via satellite — no internet required. Take photos, record audio, log observations, and search your entire history without a single bar of service. Everything is there when you get back to civilization.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">SWIFTDATA LOCAL-FIRST</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">GPS SATELLITE</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">NO ACCOUNT NEEDED</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="flex items-center gap-4 mb-8">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          Under the Hood
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-[var(--spacing-gutter)]">
+        <div class="border border-outline-variant bg-surface-container-lowest p-6">
+          <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4">APP LAYER</p>
+          <div class="space-y-2">
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">SwiftUI</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">SwiftData</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">MapKit</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">AVFoundation</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Core Location</p>
+          </div>
+        </div>
+        <div class="border border-outline-variant bg-surface-container-lowest p-6">
+          <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4">TESTING</p>
+          <div class="space-y-2">
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">XCUITest</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">XCTest</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Swift Testing</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Robot Pattern</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Pre-push gate hook</p>
+          </div>
+        </div>
+        <div class="border border-outline-variant bg-surface-container-lowest p-6">
+          <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4">INFRASTRUCTURE</p>
+          <div class="space-y-2">
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Xcode Cloud</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">TestFlight</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">OpenWeatherMap API</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Face ID / Biometrics</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="max-w-3xl">
+      <div class="flex items-center gap-4 mb-8">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          What's Next
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="space-y-4">
+        <div class="flex gap-4 items-start border border-outline-variant p-4">
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary whitespace-nowrap">v1.1</span>
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">Global search across all journals, photo GPS extraction, single-entry sharing via AirDrop / Messages.</p>
+        </div>
+        <div class="flex gap-4 items-start border border-outline-variant p-4">
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary whitespace-nowrap">v2.0</span>
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">CloudKit sync across devices, multi-user collaboration for research teams, export to CSV/PDF for papers.</p>
+        </div>
+        <div class="flex gap-4 items-start border border-outline-variant p-4">
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary whitespace-nowrap">v2.1</span>
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">AI species identification via iNaturalist API — point the camera at a plant or animal and let it do the work. Pending API access approval.</p>
+        </div>
+        <div class="flex gap-4 items-start border border-outline-variant p-4">
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary whitespace-nowrap">v3.0</span>
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">Raspberry Pi weather station integration — a purpose-built sensor array for observing the micro-environment under active research. Temperature, humidity, pressure, soil moisture, and light levels fed directly into EcoJournal entries in real time.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>

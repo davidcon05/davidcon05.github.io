@@ -20,6 +20,15 @@ const { currentPath } = Astro.props;
         Blog
       </a>
       <a
+        class={currentPath === '/projects' || currentPath?.startsWith('/projects/')
+          ? 'text-primary font-bold border-b-2 border-primary pb-1 transition-colors'
+          : 'text-on-surface-variant hover:text-secondary transition-colors'
+        }
+        href="/projects"
+      >
+        Projects
+      </a>
+      <a
         class={currentPath === '/skills'
           ? 'text-primary font-bold border-b-2 border-primary pb-1 transition-colors'
           : 'text-on-surface-variant hover:text-secondary transition-colors'
@@ -63,6 +72,15 @@ const { currentPath } = Astro.props;
         href="/"
       >
         Blog
+      </a>
+      <a
+        class={currentPath === '/projects' || currentPath?.startsWith('/projects/')
+          ? 'text-primary font-bold py-2'
+          : 'text-on-surface-variant py-2'
+        }
+        href="/projects"
+      >
+        Projects
       </a>
       <a
         class={currentPath === '/skills'

@@ -1,0 +1,254 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopNavBar from '../../components/TopNavBar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="BookSquad | David Contreras" description="A digital book club with an on-device AI curator that recommends your next read based on the tropes in your library.">
+  <TopNavBar currentPath="/projects" />
+
+  <main class="pt-32 pb-[var(--spacing-section-gap)] max-w-7xl mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]">
+
+    <!-- Breadcrumb -->
+    <nav class="mb-8">
+      <a href="/projects" class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant hover:text-secondary transition-colors inline-flex items-center gap-1">
+        <span class="material-symbols-outlined" style="font-size: 16px;">arrow_back</span>
+        PROJECTS
+      </a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="mb-16">
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary uppercase">Kotlin Multiplatform · iOS + Android</span>
+        <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] px-2 py-0.5 border border-outline-variant text-on-surface-variant">IN DEVELOPMENT</span>
+      </div>
+      <h1 class="mb-6" style="font-family: var(--font-headline-xl); font-size: var(--font-size-headline-xl); line-height: var(--font-size-headline-xl--line-height); font-weight: var(--font-size-headline-xl--font-weight); letter-spacing: var(--font-size-headline-xl--letter-spacing);">
+        BookSquad
+      </h1>
+      <p class="font-[var(--font-body-lg)] text-[var(--font-size-body-lg)] text-on-surface-variant max-w-2xl mb-4" style="line-height: var(--font-size-body-lg--line-height);">
+        My wife loves books. Her collection is vast enough that I couldn't keep track of what she had, and even when I could — I had no idea what she'd actually want to read next. I kept defaulting to gift cards because it felt safer than getting it wrong. That felt like a cop-out.
+      </p>
+      <p class="font-[var(--font-body-lg)] text-[var(--font-size-body-lg)] text-on-surface-variant max-w-2xl mb-8" style="line-height: var(--font-size-body-lg--line-height);">
+        BookSquad started as a way to fix that — and grew into a full digital book club. She and her friends catalog their libraries, rate and review books together, and leave comments for each other. The Curator, an on-device AI, reads the tropes across her collection and tells her what to read next. No algorithm trained on strangers. Just her taste.
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <div class="flex items-center gap-2 border border-outline-variant px-4 py-2">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 16px;">devices</span>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">iOS + Android, one codebase</span>
+        </div>
+        <div class="flex items-center gap-2 border border-outline-variant px-4 py-2">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 16px;">psychology</span>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">On-device AI — no cloud, no tracking</span>
+        </div>
+        <div class="flex items-center gap-2 border border-outline-variant px-4 py-2">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 16px;">group</span>
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">Social by design</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curator AI Callout -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="bg-primary-container border-2 border-secondary p-8 md:p-12">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="material-symbols-outlined text-3xl" style="color: #acedff;">auto_awesome</span>
+          <h3 class="uppercase tracking-wider font-bold" style="font-family: var(--font-label-mono); font-size: 18px; letter-spacing: 0.15em; color: #acedff;">
+            THE CURATOR
+          </h3>
+        </div>
+        <h2 class="mb-6 text-white" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+          Recommendations Built From Your Library, Not Everyone Else's.
+        </h2>
+        <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-white mb-6" style="line-height: var(--font-size-body-md--line-height); opacity: 0.85;">
+          The Curator analyzes the tropes present across your entire library — enemies to lovers, found family, slow burn, chosen one — and uses that fingerprint to score new books against your actual taste. Everything runs on-device. Your reading habits never leave your phone.
+        </p>
+        <div class="border border-white p-6 font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-white" style="opacity: 0.9;">
+          <p class="mb-3" style="color: #acedff;">// The Curator, based on your library</p>
+          <p class="mb-1 opacity-70">Your top tropes: Enemies to Lovers (43%) · Found Family (31%) · Slow Burn (28%)</p>
+          <p class="mb-3 opacity-70">Favorite authors read 5+ times: 3</p>
+          <p class="mb-1">📚 Recommended: <strong style="color: #acedff;">"Fourth Wing"</strong> — 92% match</p>
+          <p class="pl-4 mb-1 opacity-70">✓ Enemies to Lovers · Found Family · Dragon Riders</p>
+          <p class="pl-4 opacity-70">✓ Similar to 4 books you rated 5 stars</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="flex items-center gap-4 mb-12">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          What It Does
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="space-y-[var(--spacing-section-gap)]">
+
+        <!-- Feature 1: Rate, Review & Comment -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-center">
+          <div>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">FEATURE 01</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Rate It. Review It. Fight About It.
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
+              Every book in the library can be rated, reviewed, and commented on. Friends in the same squad see each other's takes, can reply, and can see at a glance whether anyone in the group has already read something — and what they thought of it. Half book club, half argument waiting to happen.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">STAR RATINGS</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">WRITTEN REVIEWS</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">THREADED COMMENTS</span>
+            </div>
+          </div>
+          <div class="border border-dashed border-outline-variant bg-surface-container-low flex flex-col items-center justify-center gap-3 p-12 min-h-[320px] text-center">
+            <span class="material-symbols-outlined text-outline-variant" style="font-size: 48px;">rate_review</span>
+            <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">📸 DAVE</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">Book detail screen showing a rating, a review, and at least one comment from a friend. Make it look like a real conversation.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2: The Squad -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-center">
+          <div class="order-2 md:order-1 border border-dashed border-outline-variant bg-surface-container-low flex flex-col items-center justify-center gap-3 p-12 min-h-[320px] text-center">
+            <span class="material-symbols-outlined text-outline-variant" style="font-size: 48px;">group</span>
+            <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">📸 DAVE</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">The squad feed or shared reading list — something that shows multiple people's activity on the same book.</p>
+          </div>
+          <div class="order-1 md:order-2">
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">FEATURE 02</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Your Book Club, In Your Pocket.
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
+              Create or join a squad. See what everyone is reading, what they've finished, and what they're raving about. Pick a book to read together, track progress as a group, and come to the actual meeting with the receipts — your notes, highlights, and hot takes already documented.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">SHARED READING LISTS</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">READING PROGRESS</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">ACTIVITY FEED</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3: ISBN Scanning + Library -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-center">
+          <div>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">FEATURE 03</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Scan a Barcode. Your Library Updates.
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
+              Point the camera at the ISBN barcode. The app fetches the title, author, cover, and metadata from Google Books automatically. No typing. Cataloguing a physical shelf goes from an afternoon project to a twenty-minute one.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">ML KIT (ANDROID)</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">VISION (iOS)</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">GOOGLE BOOKS API</span>
+            </div>
+          </div>
+          <div class="border border-dashed border-outline-variant bg-surface-container-low flex flex-col items-center justify-center gap-3 p-12 min-h-[320px] text-center">
+            <span class="material-symbols-outlined text-outline-variant" style="font-size: 48px;">barcode_scanner</span>
+            <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">📸 DAVE</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">Scanner UI with viewfinder + the book detail screen that pops up after a successful scan.</p>
+          </div>
+        </div>
+
+        <!-- Feature 4: Curator AI -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-center">
+          <div class="order-2 md:order-1 border border-dashed border-outline-variant bg-surface-container-low flex flex-col items-center justify-center gap-3 p-12 min-h-[320px] text-center">
+            <span class="material-symbols-outlined text-outline-variant" style="font-size: 48px;">psychology</span>
+            <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">📸 DAVE</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">The Curator's recommendation screen — match score, trope breakdown, and the "why" explanation. This is the showstopper.</p>
+          </div>
+          <div class="order-1 md:order-2">
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">FEATURE 04</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              The Curator Knows What You Like.
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
+              An on-device AI model identifies the literary tropes in each book's description — and builds a taste profile from the patterns across your whole library. When you ask for a recommendation, the Curator scores new books against that profile and explains why: "You love enemies to lovers — this book has it in 4 of 5 reviews." All inference runs locally. Nothing leaves the device.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">TENSORFLOW LITE</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">COREML (iOS)</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">TROPE EXTRACTION</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">ON-DEVICE ONLY</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="flex items-center gap-4 mb-8">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          Under the Hood
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-[var(--spacing-gutter)]">
+        <div class="border border-outline-variant bg-surface-container-lowest p-6">
+          <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4">SHARED (KMP)</p>
+          <div class="space-y-2">
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Business logic</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">SQLDelight database</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Ktor networking</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Koin DI</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">kotlin.test</p>
+          </div>
+        </div>
+        <div class="border border-outline-variant bg-surface-container-lowest p-6">
+          <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4">PLATFORM UI</p>
+          <div class="space-y-2">
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Jetpack Compose (Android)</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">SwiftUI (iOS)</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">ML Kit (Android)</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Vision Framework (iOS)</p>
+          </div>
+        </div>
+        <div class="border border-outline-variant bg-surface-container-lowest p-6">
+          <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4">TESTING</p>
+          <div class="space-y-2">
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Maestro (UI, cross-platform)</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">kotlin.test (unit)</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">>80% shared layer coverage</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">GitHub Actions CI</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Build Order -->
+    <section class="max-w-3xl">
+      <div class="flex items-center gap-4 mb-8">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          Build Order
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="space-y-4">
+        <div class="flex gap-4 items-start border border-outline-variant p-4">
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary whitespace-nowrap">Phase 1</span>
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">Core library: ISBN scanning, book metadata, CRUD, reading status, ratings and reviews.</p>
+        </div>
+        <div class="flex gap-4 items-start border border-outline-variant p-4">
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary whitespace-nowrap">Phase 2</span>
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">The Squad — shared libraries, comments, activity feed, and group reading lists.</p>
+        </div>
+        <div class="flex gap-4 items-start border border-secondary p-4 bg-surface-container">
+          <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary whitespace-nowrap">Phase 3 ★</span>
+          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">The Curator — on-device trope identification, taste profiling, and personalized recommendations.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
