@@ -5,6 +5,9 @@ category: "AI-Assisted Development"
 tags: ["iOS", "Claude", "Testing", "Swift", "SwiftUI"]
 readingTime: 8
 excerpt: "I'd never built a real iOS app before. 4 weeks later, I had a production app with 10,000+ lines of code and zero crashes. Here's what worked (and what didn't)."
+order: 1
+projectUrl: "/projects/ecojournal"
+projectName: "EcoJournal"
 status: "PUBLISHED"
 takeaway: "While AI drastically amplifies throughput, it also heightens the need for human expertise to avoid hidden traps. Moving fast led us to rely heavily on mock test data for hardware integrations, which ultimately introduced a wave of bugs when deployed on physical devices. Ultimately, the tools we use change, but the fundamental need for rigorous testing and domain knowledge does not."
 ---

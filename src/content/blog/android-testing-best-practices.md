@@ -5,6 +5,7 @@ category: "Testing & Quality"
 tags: ["Android", "Testing", "Espresso", "QA", "Jetpack Compose"]
 readingTime: 6
 excerpt: "Years of engineering quality into mobile apps teach you that good tests aren't about arbitrary coverage numbers—they're about confidence. Here's a strategy that actually works."
+order: 2
 status: "PUBLISHED"
 takeaway: "Coverage numbers don't ship product. Confidence does."
 series: "Mobile Testing"
