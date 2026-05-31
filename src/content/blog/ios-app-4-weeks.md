@@ -5,7 +5,8 @@ category: "AI-Assisted Development"
 tags: ["iOS", "Claude", "Testing", "Swift", "SwiftUI"]
 readingTime: 8
 excerpt: "I'd never built a real iOS app before. 4 weeks later, I had a production app with 10,000+ lines of code and zero crashes. Here's what worked (and what didn't)."
-status: "LATEST"
+status: "PUBLISHED"
+takeaway: "AI amplifies throughput, it's not a replacement for expertise. The tools change. The fundamentals don't."
 ---
 
 # How I Shipped an iOS App in 4 Weekends Using AI-Assisted Development
@@ -121,11 +122,5 @@ AI forgot that each of these things requires permission to use. So many mysterio
 - 92% model test coverage
 - 85% overall test coverage
 - 0 SwiftLint violations
-
-## Key Takeaway
-
-**AI amplifies throughput, its not a replacement for expertise.**
-
-My QA experience informed which AI suggestions to accept vs reject. The tools change. The fundamentals don't.
 
 ---

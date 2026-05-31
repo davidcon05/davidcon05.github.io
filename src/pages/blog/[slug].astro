@@ -169,14 +169,16 @@ const formattedDate = new Date(post.data.date).toLocaleDateString('en-US', {
         </div>
 
         <!-- Key Takeaways -->
-        <div class="bg-primary-container border border-outline-variant p-6">
-          <h3 class="text-on-primary-container mb-4 uppercase" style="font-family: var(--font-label-mono); font-size: var(--font-size-label-mono); line-height: var(--font-size-label-mono--line-height); font-weight: var(--font-size-label-mono--font-weight); letter-spacing: var(--font-size-label-mono--letter-spacing);">
-            Key Takeaway
-          </h3>
-          <p class="text-on-primary-container italic leading-relaxed">
-            "AI amplifies expertise, doesn't replace it. My 10 years of QA experience informed which AI suggestions to accept vs reject."
-          </p>
-        </div>
+        {post.data.takeaway && (
+          <div class="bg-primary-container border border-outline-variant p-6">
+            <h3 class="text-on-primary-container mb-4 uppercase" style="font-family: var(--font-label-mono); font-size: var(--font-size-label-mono); line-height: var(--font-size-label-mono--line-height); font-weight: var(--font-size-label-mono--font-weight); letter-spacing: var(--font-size-label-mono--letter-spacing);">
+              Key Takeaway
+            </h3>
+            <p class="italic leading-relaxed" style="color: #acedff;">
+              "{post.data.takeaway}"
+            </p>
+          </div>
+        )}
       </aside>
     </div>
 
