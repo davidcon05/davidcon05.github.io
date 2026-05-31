@@ -12,6 +12,9 @@ const blogCollection = defineCollection({
     excerpt: z.string(),
     status: z.string().optional(),
     takeaway: z.string().optional(),
+    metrics: z.array(z.object({ label: z.string(), value: z.string() })).optional(),
+    series: z.string().optional(),
+    seriesOrder: z.number().optional(),
   }),
 });
 

@@ -7,19 +7,24 @@ import { getCollection, render } from 'astro:content';
 // Generate static paths for all blog posts
 export async function getStaticPaths() {
   const allPosts = await getCollection('blog');
-  const sortedPosts = allPosts.sort((a, b) =>
-    new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-  );
 
   return allPosts.map((post) => {
-    const currentIndex = sortedPosts.findIndex((p) => p.id === post.id);
+    let previousPost = null;
+    let nextPost = null;
+
+    if (post.data.series) {
+      const seriesPosts = allPosts
+        .filter((p) => p.data.series === post.data.series)
+        .sort((a, b) => (a.data.seriesOrder ?? 0) - (b.data.seriesOrder ?? 0));
+
+      const idx = seriesPosts.findIndex((p) => p.id === post.id);
+      previousPost = idx > 0 ? seriesPosts[idx - 1] : null;
+      nextPost = idx < seriesPosts.length - 1 ? seriesPosts[idx + 1] : null;
+    }
+
     return {
       params: { slug: post.id },
-      props: {
-        entry: post,
-        previousPost: currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null,
-        nextPost: currentIndex > 0 ? sortedPosts[currentIndex - 1] : null,
-      },
+      props: { entry: post, previousPost, nextPost },
     };
   });
 }
@@ -128,50 +133,30 @@ const formattedDate = new Date(post.data.date).toLocaleDateString('en-US', {
       <!-- Performance Metrics Sidebar (Right) -->
       <aside class="col-span-12 lg:col-span-3 space-y-6">
         <!-- Key Metrics -->
-        <div class="bg-surface border border-outline-variant p-6 sticky top-24">
-          <h3 class="text-primary mb-6 uppercase" style="font-family: var(--font-label-mono); font-size: var(--font-size-label-mono); line-height: var(--font-size-label-mono--line-height); font-weight: var(--font-size-label-mono--font-weight); letter-spacing: var(--font-size-label-mono--letter-spacing);">
-            Key Metrics
-          </h3>
-          <div class="space-y-6">
-            <div>
-              <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant mb-1">
-                Development Time
-              </p>
-              <p class="font-[var(--font-headline-md)] text-[var(--font-size-headline-md)] text-primary">
-                60-70 hours
-              </p>
-            </div>
-            <div>
-              <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant mb-1">
-                Lines of Code
-              </p>
-              <p class="font-[var(--font-headline-md)] text-[var(--font-size-headline-md)] text-primary">
-                10,000+
-              </p>
-            </div>
-            <div>
-              <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant mb-1">
-                Test Coverage
-              </p>
-              <p class="font-[var(--font-headline-md)] text-[var(--font-size-headline-md)] text-primary">
-                85%
-              </p>
-            </div>
-            <div>
-              <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant mb-1">
-                Production Crashes
-              </p>
-              <p class="font-[var(--font-headline-md)] text-[var(--font-size-headline-md)] text-secondary">
-                0
-              </p>
+        {post.data.metrics && post.data.metrics.length > 0 && (
+          <div class="bg-surface border border-outline-variant p-6 sticky top-24">
+            <h3 class="text-primary mb-6 uppercase" style="font-family: var(--font-label-mono); font-size: var(--font-size-label-mono); line-height: var(--font-size-label-mono--line-height); font-weight: var(--font-size-label-mono--font-weight); letter-spacing: var(--font-size-label-mono--letter-spacing);">
+              Key Metrics
+            </h3>
+            <div class="space-y-6">
+              {post.data.metrics.map((metric) => (
+                <div>
+                  <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant mb-1">
+                    {metric.label}
+                  </p>
+                  <p class="font-[var(--font-headline-md)] text-[var(--font-size-headline-md)] text-primary">
+                    {metric.value}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
+        )}
 
         <!-- Key Takeaways -->
         {post.data.takeaway && (
           <div class="bg-primary-container border border-outline-variant p-6">
-            <h3 class="text-on-primary-container mb-4 uppercase" style="font-family: var(--font-label-mono); font-size: var(--font-size-label-mono); line-height: var(--font-size-label-mono--line-height); font-weight: var(--font-size-label-mono--font-weight); letter-spacing: var(--font-size-label-mono--letter-spacing);">
+            <h3 class="text-white mb-4 uppercase" style="font-family: var(--font-label-mono); font-size: var(--font-size-label-mono); line-height: var(--font-size-label-mono--line-height); font-weight: var(--font-size-label-mono--font-weight); letter-spacing: var(--font-size-label-mono--letter-spacing);">
               Key Takeaway
             </h3>
             <p class="italic leading-relaxed" style="color: #acedff;">
@@ -183,44 +168,59 @@ const formattedDate = new Date(post.data.date).toLocaleDateString('en-US', {
     </div>
 
     <!-- Pagination -->
-    {(previousPost || nextPost) && (
-      <div class="mt-[var(--spacing-section-gap)] pt-12 border-t border-outline-variant">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {previousPost && (
-            <a
-              href={`/blog/${previousPost.slug}`}
-              class="group p-6 bg-surface-container-lowest border border-outline-variant hover:border-secondary transition-colors"
-            >
-              <div class="flex items-center gap-2 mb-3">
-                <span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">arrow_back</span>
-                <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">
-                  PREVIOUS
-                </span>
-              </div>
-              <h3 class="font-[var(--font-headline-sm)] text-[var(--font-size-headline-sm)] text-primary group-hover:text-secondary transition-colors">
-                {previousPost.data.title}
-              </h3>
-            </a>
-          )}
-          {nextPost && (
-            <a
-              href={`/blog/${nextPost.slug}`}
-              class="group p-6 bg-surface-container-lowest border border-outline-variant hover:border-secondary transition-colors md:text-right"
-            >
-              <div class="flex items-center justify-end gap-2 mb-3">
-                <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">
-                  NEXT
-                </span>
-                <span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">arrow_forward</span>
-              </div>
-              <h3 class="font-[var(--font-headline-sm)] text-[var(--font-size-headline-sm)] text-primary group-hover:text-secondary transition-colors">
-                {nextPost.data.title}
-              </h3>
-            </a>
-          )}
-        </div>
+    <div class="mt-[var(--spacing-section-gap)] pt-12 border-t border-outline-variant">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {previousPost ? (
+          <a
+            href={`/blog/${previousPost.id}`}
+            class="group p-6 bg-surface-container-lowest border border-outline-variant hover:border-secondary transition-colors"
+          >
+            <div class="flex items-center gap-2 mb-3">
+              <span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">arrow_back</span>
+              <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">
+                PREVIOUS
+              </span>
+            </div>
+            <h3 class="font-[var(--font-headline-sm)] text-[var(--font-size-headline-sm)] text-primary group-hover:text-secondary transition-colors">
+              {previousPost.data.title}
+            </h3>
+          </a>
+        ) : (
+          <div />
+        )}
+        {nextPost ? (
+          <a
+            href={`/blog/${nextPost.id}`}
+            class="group p-6 bg-surface-container-lowest border border-outline-variant hover:border-secondary transition-colors md:text-right"
+          >
+            <div class="flex items-center justify-end gap-2 mb-3">
+              <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">
+                NEXT
+              </span>
+              <span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">arrow_forward</span>
+            </div>
+            <h3 class="font-[var(--font-headline-sm)] text-[var(--font-size-headline-sm)] text-primary group-hover:text-secondary transition-colors">
+              {nextPost.data.title}
+            </h3>
+          </a>
+        ) : (
+          <a
+            href="/blog"
+            class="group p-6 bg-surface-container-lowest border border-outline-variant hover:border-secondary transition-colors md:text-right"
+          >
+            <div class="flex items-center justify-end gap-2 mb-3">
+              <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">
+                ALL POSTS
+              </span>
+              <span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">grid_view</span>
+            </div>
+            <h3 class="font-[var(--font-headline-sm)] text-[var(--font-size-headline-sm)] text-primary group-hover:text-secondary transition-colors">
+              Back to the Blog
+            </h3>
+          </a>
+        )}
       </div>
-    )}
+    </div>
   </main>
 
   <!-- Scroll to Top Button -->

@@ -7,12 +7,14 @@ readingTime: 6
 excerpt: "Years of engineering quality into mobile apps teach you that good tests aren't about arbitrary coverage numbers—they're about confidence. Here's a strategy that actually works."
 status: "PUBLISHED"
 takeaway: "Coverage numbers don't ship product. Confidence does."
+series: "Mobile Testing"
+seriesOrder: 1
 ---
 
 # Modern Android Testing Strategies: Lessons from Quality Engineering
 
 **The Problem:**  
-The Android ecosystem is vast, fragmented, and heavily dependent on third-party libraries. Without a deliberate plan, keeping up with regression testing can feel like trying to plug a colander with your fingers.  
+The Android ecosystem is vast, fragmented, and heavily dependent on third-party libraries. Without a deliberate plan, keeping up with testing can feel like trying to plug a colander with your fingers.  
 
 **The Solution:**  
 A mature, "Shift-Left" testing strategy warns you that an update from a manufacturer, a library dependency, or a regression from your own team is breaking the UX long before the build ever hits production.
@@ -53,5 +55,3 @@ We still want humans validating **critical flows**; especially in the AI driven 
 - Login/authentication flows
 - Payment/checkout processes
 - Core feature happy paths
-
-
