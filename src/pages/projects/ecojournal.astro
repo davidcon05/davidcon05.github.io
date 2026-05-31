@@ -210,6 +210,50 @@ import Footer from '../../components/Footer.astro';
       </div>
     </section>
 
+    <!-- Engineering Challenges -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="flex items-center gap-4 mb-8">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          Engineering Challenges
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="space-y-4 max-w-3xl">
+
+        <div class="flex gap-4 items-start border border-outline-variant p-6">
+          <span class="material-symbols-outlined text-secondary mt-1" style="font-size: 20px;">signal_wifi_off</span>
+          <div>
+            <p class="font-[var(--font-body-md)] font-bold text-primary mb-2">Offline-First in Practice — What Happens When There's No Weather Data?</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant" style="line-height: var(--font-size-body-md--line-height);">
+              Building offline-first sounds straightforward until you hit the edge cases. EcoJournal auto-logs weather at the time of each entry — but what if there's no cell service and the API call fails? We decided to queue the request and attempt the fetch when connectivity returns, then backfill the weather data against the entry's timestamp. If the window closes and no data is available, the field is marked as unavailable rather than silently left empty. The entry is never held hostage to an API.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 items-start border border-outline-variant p-6">
+          <span class="material-symbols-outlined text-secondary mt-1" style="font-size: 20px;">sync</span>
+          <div>
+            <p class="font-[var(--font-body-md)] font-bold text-primary mb-2">Data Ownership — Her Research Shouldn't Live on One Phone.</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant" style="line-height: var(--font-size-body-md--line-height);">
+              v1.0 stores everything locally — which is fast, private, and simple to ship. But it creates a trust problem: if she switches phones, or the device is lost in the field, so is the research. The v2.0 roadmap is built around solving this with CloudKit sync — background sync that's transparent to the user, works across devices, and doesn't require an account. The challenge is determining when to sync given that field conditions mean connectivity is intermittent and unpredictable.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 items-start border border-outline-variant p-6">
+          <span class="material-symbols-outlined text-secondary mt-1" style="font-size: 20px;">lock</span>
+          <div>
+            <p class="font-[var(--font-body-md)] font-bold text-primary mb-2">Security — NDA-Protected Research Needs More Than a Lock Screen.</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant" style="line-height: var(--font-size-body-md--line-height);">
+              Environmental researchers can be contracted under NDA — which means the data in EcoJournal isn't just personal, it can be legally protected. A simple password wasn't enough, and it introduced a second problem: in an offline-first app with no cloud backup, a forgotten password means the research is gone permanently. The solution was device-level encryption with Face ID as the primary credential — authentication tied to the device and the user's biometric, not a string they have to remember. An 8+ character password serves as the backup for account recovery. The research stays protected without creating a single point of failure that could wipe months of contracted field work.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Roadmap -->
     <section class="max-w-3xl">
       <div class="flex items-center gap-4 mb-8">

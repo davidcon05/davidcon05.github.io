@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopNavBar from '../../components/TopNavBar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="A1Fit | David Contreras" description="An Android health tracking app built after a diabetes diagnosis — gamified daily quests that brought A1C from diabetic range to 6.1 in six months.">
+  <TopNavBar currentPath="/projects" />
+
+  <main class="pt-32 pb-[var(--spacing-section-gap)] max-w-7xl mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]">
+
+    <!-- Breadcrumb -->
+    <nav class="mb-8">
+      <a href="/projects" class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant hover:text-secondary transition-colors inline-flex items-center gap-1">
+        <span class="material-symbols-outlined" style="font-size: 16px;">arrow_back</span>
+        PROJECTS
+      </a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="mb-16">
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary uppercase">Android</span>
+        <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] px-2 py-0.5 border border-outline-variant text-on-surface-variant">ON PAUSE</span>
+      </div>
+      <h1 class="mb-6" style="font-family: var(--font-headline-xl); font-size: var(--font-size-headline-xl); line-height: var(--font-size-headline-xl--line-height); font-weight: var(--font-size-headline-xl--font-weight); letter-spacing: var(--font-size-headline-xl--letter-spacing);">
+        A1Fit
+      </h1>
+      <p class="font-[var(--font-body-lg)] text-[var(--font-size-body-lg)] text-on-surface-variant max-w-2xl mb-4" style="line-height: var(--font-size-body-lg--line-height);">
+        A routine physical told me I had diabetes. I didn't want to be on medication if I could avoid it — so I treated it like a game. I'm a gamer. I know how to optimize for a goal when the numbers are in front of me.
+      </p>
+      <p class="font-[var(--font-body-lg)] text-[var(--font-size-body-lg)] text-on-surface-variant max-w-2xl mb-8" style="line-height: var(--font-size-body-lg--line-height);">
+        I built A1Fit to track everything: steps, blood sugar readings, post-meal walks, weight. Every day had quests. Every week had a target. Six months later, my A1C was down to 6.1 and I'd lost 20 lbs. The app did its job. I put it on pause. Now I want to go back and make it smarter.
+      </p>
+
+      <!-- Outcome callout -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl">
+        <div class="bg-surface-container p-4 border border-outline-variant">
+          <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-1">TIMELINE</p>
+          <p class="font-bold text-primary text-xl">6 Months</p>
+        </div>
+        <div class="bg-surface-container p-4 border border-outline-variant">
+          <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-1">FINAL A1C</p>
+          <p class="font-bold text-primary text-xl">6.1</p>
+        </div>
+        <div class="bg-surface-container p-4 border border-outline-variant">
+          <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-1">WEIGHT LOST</p>
+          <p class="font-bold text-primary text-xl">~20 lbs</p>
+        </div>
+        <div class="bg-surface-container p-4 border border-outline-variant">
+          <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-1">DAILY STEPS</p>
+          <p class="font-bold text-primary text-xl">10,000</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Demo Stub -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="border-2 border-dashed border-secondary bg-surface-container-low flex flex-col items-center justify-center gap-4 p-16 text-center">
+        <span class="material-symbols-outlined text-secondary" style="font-size: 56px;">videocam</span>
+        <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">📹 DAVE: Quick screen recording of the dashboard.</p>
+        <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant max-w-md">Show the daily quest view, the progress chart, and a blood sugar log entry. 30 seconds is enough. You have this app — use it.</p>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="flex items-center gap-4 mb-12">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          What It Does
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="space-y-[var(--spacing-section-gap)]">
+
+        <!-- Feature 1: Daily Quests -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-center">
+          <div>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">FEATURE 01</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Health as a Game. Daily Quests, Real Results.
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
+              Every day starts with a set of quests — hit 10,000 steps, log blood sugar within range, take a post-meal walk, stay under a carb threshold. Complete them all and the day is a win. Miss one and you know exactly what to fix tomorrow. It's the same feedback loop that makes games compelling, applied to something that actually matters.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">DAILY GOALS</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">STREAK TRACKING</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">PROGRESS FEEDBACK</span>
+            </div>
+          </div>
+          <div class="border border-dashed border-outline-variant bg-surface-container-low flex flex-col items-center justify-center gap-3 p-12 min-h-[320px] text-center">
+            <span class="material-symbols-outlined text-outline-variant" style="font-size: 48px;">task_alt</span>
+            <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">📸 DAVE</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">The daily quest checklist — ideally with a few items checked off. Show the win state.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2: Blood Sugar + A1C Tracking -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-center">
+          <div class="order-2 md:order-1 border border-dashed border-outline-variant bg-surface-container-low flex flex-col items-center justify-center gap-3 p-12 min-h-[320px] text-center">
+            <span class="material-symbols-outlined text-outline-variant" style="font-size: 48px;">monitoring</span>
+            <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">📸 DAVE</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">Blood sugar chart over time with the target zone highlighted. The downward trend is the whole story.</p>
+          </div>
+          <div class="order-1 md:order-2">
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">FEATURE 02</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              The Numbers That Actually Matter.
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
+              Log blood sugar readings throughout the day and track the trend over time. The goal wasn't just to see the numbers — it was to see them move. A1Fit charts readings against your target range so the progress is visual and hard to ignore. When the line is heading in the right direction, you keep doing what's working.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">BLOOD SUGAR LOGGING</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">A1C TRACKING</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">TREND CHARTS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3: Step + Activity Tracking -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-center">
+          <div>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">FEATURE 03</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              10,000 Steps. Every Day. No Exceptions.
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
+              Step tracking with a daily target and a post-meal walk reminder — one of the most effective ways to blunt blood sugar spikes after eating. A1Fit logs activity against the day's goals and shows cumulative progress over the week. Simple enough that there's no excuse to skip checking.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">STEP COUNTER</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">POST-MEAL REMINDERS</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">WEEKLY SUMMARY</span>
+            </div>
+          </div>
+          <div class="border border-dashed border-outline-variant bg-surface-container-low flex flex-col items-center justify-center gap-3 p-12 min-h-[320px] text-center">
+            <span class="material-symbols-outlined text-outline-variant" style="font-size: 48px;">directions_walk</span>
+            <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary">📸 DAVE</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">Step progress ring or bar for the day — ideally close to or at 10,000. Make it look satisfying.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- What's Next -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="flex items-center gap-4 mb-8">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          When I Come Back to It
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="space-y-4 max-w-3xl">
+        <div class="flex gap-4 items-start border border-outline-variant p-4">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 20px;">restaurant</span>
+          <div>
+            <p class="font-[var(--font-body-md)] font-bold text-primary mb-1">Calorie Counting</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">Log meals and track macros alongside blood sugar to see the direct relationship between what you eat and how your numbers respond.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start border border-outline-variant p-4">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 20px;">fitness_center</span>
+          <div>
+            <p class="font-[var(--font-body-md)] font-bold text-primary mb-1">Adaptive Workout Recommendations</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">Push harder when you're ahead of your targets. Take it easy when recovery is the smarter play. Workout suggestions that respond to your actual data, not a fixed schedule.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start border border-secondary p-4 bg-surface-container">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 20px;">psychology</span>
+          <div>
+            <p class="font-[var(--font-body-md)] font-bold text-primary mb-1">AI Meal & Workout Advice ★</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">Use blood sugar trends, activity history, and logged meals to generate personalized advice — what to eat before a workout, when to rest, which habits are actually moving the A1C needle.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="max-w-3xl">
+      <div class="flex items-center gap-4 mb-8">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          Under the Hood
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)]">
+        <div class="border border-outline-variant bg-surface-container-lowest p-6">
+          <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4">CURRENT STACK</p>
+          <div class="space-y-2">
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Android (Kotlin)</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Jetpack Compose</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Room database</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Health Connect API</p>
+          </div>
+        </div>
+        <div class="border border-outline-variant bg-surface-container-lowest p-6">
+          <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4">PLANNED</p>
+          <div class="space-y-2">
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Claude API (meal + workout advice)</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Nutrition API integration</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Adaptive goal engine</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
