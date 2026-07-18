@@ -8,6 +8,7 @@
 
 | File | Purpose |
 |------|---------|
+| **A1FIT_JOURNAL.md** | Running journal for A1Fit app development (musings, photos, draft posts) |
 | **BLOG_STRATEGY.md** | Complete blogging strategy: narrative, calendar, SEO, distribution |
 | **BLOG_IDEAS_SCORECARD.md** | All 60 blog posts ranked by impact (SEO, uniqueness, technical depth) |
 | **README.md** | This file - quick reference |

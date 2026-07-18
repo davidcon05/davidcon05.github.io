@@ -23,13 +23,36 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="md:col-span-5 relative">
-        <div class="aspect-square w-full bg-surface-container-low overflow-hidden rounded-lg border border-outline-variant hover:border-secondary transition-colors flex flex-col items-center justify-center gap-4 p-8">
-            <span class="material-symbols-outlined text-outline-variant" style="font-size: 48px;">photo_camera</span>
-            <div class="text-center">
-              <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-1">STATUS: PENDING</p>
-              <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant">Waiting on a good walk with Penny.</p>
-            </div>
+        <div class="aspect-square w-full bg-surface-container-low overflow-hidden rounded-lg border border-outline-variant hover:border-secondary transition-colors flex flex-col p-6 font-[var(--font-code-block)] text-[var(--font-size-code-block)] relative shadow-inner">
+          <!-- Terminal header dots -->
+          <div class="flex items-center gap-1.5 mb-6 border-b border-outline-variant pb-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ba1a1a] opacity-80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#e5ad06] opacity-80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#00687a] opacity-80"></span>
+            <span class="ml-2 font-[var(--font-label-mono)] text-[10px] text-on-surface-variant opacity-60 uppercase tracking-widest">dave@localhost:~</span>
           </div>
+          <!-- Terminal content -->
+          <div class="space-y-4 flex-grow overflow-y-auto leading-relaxed text-on-surface">
+            <p class="text-on-surface-variant font-[var(--font-code-block)] text-[var(--font-size-code-block)]">
+              <span class="text-secondary font-bold">dave@localhost:~$</span> systemctl status developer.service
+            </p>
+            <div>
+              <p class="font-bold text-secondary font-[var(--font-code-block)] text-[var(--font-size-code-block)]">
+                ● developer.service - David Contreras Specs
+              </p>
+              <div class="pl-4 mt-2 space-y-1.5 font-[var(--font-code-block)] text-[12px] text-on-surface-variant">
+                <p><span class="text-outline">Active:</span> active (running) since Jun 2026</p>
+                <p><span class="text-outline">Core:</span> Senior Test Lead / Developer</p>
+                <p><span class="text-outline">Uptime:</span> 24 releases, 0 critical escapes</p>
+                <p><span class="text-outline">Partner:</span> Penny 🐾 (Moral Support Lead)</p>
+                <p><span class="text-outline">Focus:</span> Clean Arch, Testability, KMP, Swift</p>
+              </div>
+            </div>
+            <p class="text-on-surface-variant font-[var(--font-code-block)] text-[var(--font-size-code-block)]">
+              <span class="text-secondary font-bold">dave@localhost:~$</span> <span class="animate-pulse bg-secondary text-on-secondary px-1.5 font-bold">_</span>
+            </p>
+          </div>
+        </div>
 
           <!-- Floating Terminal Badge -->
           <div class="absolute -bottom-4 -left-4 bg-primary-container text-on-primary p-4 rounded shadow-xl hidden md:block terminal-badge">

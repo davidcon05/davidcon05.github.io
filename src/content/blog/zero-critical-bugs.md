@@ -6,7 +6,7 @@ tags: ["Android", "iOS", "Testing", "QA", "CI/CD", "Mobile"]
 readingTime: 5
 excerpt: "39 releases across iOS and Android. Zero critical bugs. Here are the four lessons that made it possible — and the ones that would have sunk it."
 order: 3
-status: "LATEST"
+status: "PUBLISHED"
 takeaway: "Good strategies enable speed and coverage area. Bad strategies create friction."
 series: "Mobile Testing"
 seriesOrder: 2
