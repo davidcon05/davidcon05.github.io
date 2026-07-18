@@ -5,7 +5,7 @@ category: "AI-Assisted Development"
 tags: ["Testing", "AI", "Claude", "Career", "Mobile"]
 readingTime: 8
 excerpt: "After building EcoJournal for my wife with Claude I had a startling revelation when going back to add a feature - I had no clue what the AI had built. I had tested it, defined the requirements, completed the spikes to understand the requirements and limitations but I did not understand the view models, Swift Data classes, and the state management system"
-status: "PUBLISHED"
+status: "LATEST"
 order: 4
 ---
 

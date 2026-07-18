@@ -33,20 +33,7 @@ The answer wasn't to let the AI write all the tests. The answer was **Loop Engin
 Loop engineering is the practice of mapping the classic SDLC phases into structured, agentic AI feedback loops. Instead of asking a model to execute a massive, open-ended task in a single shot, you break the task into small, sequential loops that require explicit human intervention and verification at key transition gates.
 
 To bring this to life for my mobile test engineering team, I designed a system of **four specialized AI skills (or plugins)**. Individually, they act as focused tools; combined, they form a self-reinforcing quality loop.
-
-```mermaid
-graph TD
-    A[Start: Native Platform Skill] --> B[Loop 1: Test Case & Coverage Skill]
-    B --> C{Human Reviews Cases?}
-    C -- Refuse/Edit --> B
-    C -- Approve --> D[Loop 2: Coding Branch Created]
-    D --> E[Subagents Run: Automation Review Skill]
-    E --> F{Human Runs Test on Device}
-    F -- Fails with Visual Context --> D
-    F -- Passes --> G{Code Review & Logic Check}
-    G -- Edits Needed --> D
-    G -- Approved --> H[Merge & Deploy]
-```
+![Loop Engineering Flowchart](/images/loop_engineering_flow.png)
 
 ### The Four Skills
 
