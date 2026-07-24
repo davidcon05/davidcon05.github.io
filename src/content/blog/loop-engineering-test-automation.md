@@ -5,7 +5,7 @@ category: "AI-Assisted Development"
 tags: ["Testing", "AI", "Mobile", "Automation", "Loop Engineering"]
 readingTime: 7
 excerpt: "How we mapped the classic SDLC to a set of four agentic AI skills, designing high-discipline loops that empower test engineers without burning a fortune in API tokens."
-status: "LATEST"
+status: "PUBLISHED"
 order: 5
 takeaway: "Small, disciplined loops keep reviews human-scale, code clean, and prevent AI agents from burning tokens blindly."
 ---
