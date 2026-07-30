@@ -5,10 +5,8 @@ category: "AI-Assisted Development"
 tags: ["Android", "Kotlin", "Claude", "AI", "Jetpack Compose", "Loop Engineering"]
 readingTime: 8
 excerpt: "My Samsung remote went missing, and every replacement app in the Play Store wanted an ad slot or a subscription for the privilege of changing the channel. So I built my own. The real story isn't the app — it's that writing code is no longer the hard part; knowing what to build and how to run the AI loop is."
-status: "LATEST"
+status: "PUBLISHED"
 order: 7
-featured: true
-featuredOrder: 3
 takeaway: "Code generation is fast now. The actual skill is knowing precisely what to build next, and disciplining the loop — research, plan, one slice, validate, commit — that keeps the AI pointed at it."
 ---
 
