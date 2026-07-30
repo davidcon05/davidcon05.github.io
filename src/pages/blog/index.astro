@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TopNavBar from '../../components/TopNavBar.astro';
 import BlogCard from '../../components/BlogCard.astro';
+import BlogListItem from '../../components/BlogListItem.astro';
 import Sidebar from '../../components/Sidebar.astro';
 import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
@@ -11,6 +12,22 @@ const allPosts = await getCollection('blog');
 const sortedPosts = allPosts.sort((a, b) =>
   new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
+const featuredPosts = allPosts
+  .filter((post) => post.data.featured)
+  .sort((a, b) => (a.data.featuredOrder ?? Infinity) - (b.data.featuredOrder ?? Infinity));
+
+const toCardProps = (post: (typeof allPosts)[number]) => ({
+  title: post.data.title,
+  date: new Date(post.data.date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  }).toUpperCase(),
+  readTime: post.data.readingTime,
+  excerpt: post.data.excerpt,
+  tags: post.data.tags,
+  slug: post.id,
+});
 ---
 
 <BaseLayout title="David Contreras | Engineering Blog">
@@ -30,23 +47,28 @@ const sortedPosts = allPosts.sort((a, b) =>
 
     <div class="grid grid-cols-12 gap-[var(--spacing-gutter)] items-start">
       <!-- Main Content: Blog Feed -->
-      <section class="col-span-12 lg:col-span-8 space-y-[var(--spacing-gutter)] order-1">
-        {sortedPosts.map((post) => (
-          <BlogCard
-            post={{
-              title: post.data.title,
-              date: new Date(post.data.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-              }).toUpperCase(),
-              readTime: post.data.readingTime,
-              excerpt: post.data.excerpt,
-              tags: post.data.tags,
-              slug: post.id,
-            }}
-          />
-        ))}
+      <section class="col-span-12 lg:col-span-8 order-1">
+        {featuredPosts.length > 0 && (
+          <div class="mb-[var(--spacing-section-gap)]">
+            <h2 class="mb-[var(--spacing-gutter)] font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] uppercase tracking-wide text-on-surface-variant">
+              Featured
+            </h2>
+            <div class="space-y-[var(--spacing-gutter)]">
+              {featuredPosts.map((post) => (
+                <BlogCard post={toCardProps(post)} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <h2 class="mb-[var(--spacing-gutter)] font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] uppercase tracking-wide text-on-surface-variant">
+          All Posts
+        </h2>
+        <div class="border-t border-outline-variant">
+          {sortedPosts.map((post) => (
+            <BlogListItem post={toCardProps(post)} />
+          ))}
+        </div>
       </section>
 
       <!-- Sidebar -->

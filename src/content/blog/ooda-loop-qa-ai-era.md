@@ -5,8 +5,10 @@ category: "AI-Assisted Development"
 tags: ["QA", "Testing", "AI", "Leadership", "Automation", "Analytics"]
 readingTime: 9
 excerpt: "A dinner conversation about QA bottlenecks pulled me back to a launch where iOS was months behind and nobody trusted the UI tests we had. AI has put every QA team in that same crunch. Here's the decision framework I learned in the Army that gets you out of it."
-status: "LATEST"
+status: "PUBLISHED"
 order: 6
+featured: true
+featuredOrder: 1
 takeaway: "AI didn't create the QA bottleneck, it just removed the slack that used to hide it. The OODA loop is how you decide what to trust, automate, and act on next, before the backlog makes that decision for you."
 ---
 

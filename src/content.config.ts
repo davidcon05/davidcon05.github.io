@@ -14,6 +14,8 @@ const blogCollection = defineCollection({
     takeaway: z.string().optional(),
     metrics: z.array(z.object({ label: z.string(), value: z.string() })).optional(),
     order: z.number().optional(),
+    featured: z.boolean().optional(),
+    featuredOrder: z.number().optional(),
     projectUrl: z.string().optional(),
     projectName: z.string().optional(),
     series: z.string().optional(),

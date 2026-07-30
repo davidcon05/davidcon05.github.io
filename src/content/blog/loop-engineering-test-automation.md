@@ -7,6 +7,8 @@ readingTime: 7
 excerpt: "How we mapped the classic SDLC to a set of four agentic AI skills, designing high-discipline loops that empower test engineers without burning a fortune in API tokens."
 status: "PUBLISHED"
 order: 5
+featured: true
+featuredOrder: 2
 takeaway: "Small, disciplined loops keep reviews human-scale, code clean, and prevent AI agents from burning tokens blindly."
 ---
 
