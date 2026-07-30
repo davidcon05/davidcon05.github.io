@@ -1,0 +1,54 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+  <defs>
+    <marker id="arrowhead2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#00687a"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="798" height="398" rx="12" fill="#ffffff" stroke="#c6c6cd" stroke-width="1.5"/>
+
+  <text x="400" y="30" text-anchor="middle" font-size="11" letter-spacing="1.5" fill="#45464d" font-weight="600">CLIENT LAYER</text>
+
+  <rect x="110" y="42" width="180" height="80" rx="8" fill="#eff4ff" stroke="#c6c6cd" stroke-width="1.5"/>
+  <text x="200" y="68" text-anchor="middle" font-size="14" fill="#0b1c30">iOS App</text>
+
+  <rect x="310" y="42" width="180" height="80" rx="8" fill="#eff4ff" stroke="#c6c6cd" stroke-width="1.5"/>
+  <text x="400" y="68" text-anchor="middle" font-size="14" fill="#0b1c30">Android App</text>
+  <rect x="330" y="86" width="140" height="26" rx="6" fill="#e5eeff" stroke="#00687a" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="400" y="103" text-anchor="middle" font-size="11" fill="#0b1c30">SDK</text>
+
+  <rect x="510" y="42" width="180" height="80" rx="8" fill="#eff4ff" stroke="#c6c6cd" stroke-width="1.5"/>
+  <text x="600" y="68" text-anchor="middle" font-size="14" fill="#0b1c30">Web App</text>
+
+  <!-- main path: app -> backend -->
+  <line x1="400" y1="122" x2="400" y2="196" stroke="#00687a" stroke-width="2" marker-end="url(#arrowhead2)"/>
+
+  <rect x="300" y="200" width="200" height="60" rx="8" fill="#eff4ff" stroke="#c6c6cd" stroke-width="1.5"/>
+  <text x="400" y="234" text-anchor="middle" font-size="14" fill="#0b1c30">Backend</text>
+
+  <!-- SDK branch: bypasses the backend entirely -->
+  <path d="M470,99 L695,99 L695,196" fill="none" stroke="#00687a" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrowhead2)"/>
+
+  <rect x="610" y="200" width="170" height="60" rx="8" fill="#e5eeff" stroke="#00687a" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="695" y="226" text-anchor="middle" font-size="12.5" fill="#0b1c30">Third-Party Service</text>
+  <text x="695" y="242" text-anchor="middle" font-size="10" font-style="italic" fill="#45464d">(via SDK, not the backend)</text>
+
+  <line x1="400" y1="260" x2="400" y2="296" stroke="#00687a" stroke-width="2" marker-end="url(#arrowhead2)"/>
+
+  <text x="400" y="312" text-anchor="middle" font-size="11" letter-spacing="1.5" fill="#45464d" font-weight="600">OTHER SERVICES</text>
+
+  <rect x="20" y="320" width="140" height="56" rx="8" fill="#eff4ff" stroke="#c6c6cd" stroke-width="1.5"/>
+  <text x="90" y="352" text-anchor="middle" font-size="12" fill="#0b1c30">Customer Support</text>
+
+  <rect x="175" y="320" width="140" height="56" rx="8" fill="#eff4ff" stroke="#c6c6cd" stroke-width="1.5"/>
+  <text x="245" y="352" text-anchor="middle" font-size="12" fill="#0b1c30">Marketing</text>
+
+  <rect x="330" y="320" width="140" height="56" rx="8" fill="#eff4ff" stroke="#c6c6cd" stroke-width="1.5"/>
+  <text x="400" y="352" text-anchor="middle" font-size="12" fill="#0b1c30">Payments</text>
+
+  <rect x="485" y="320" width="140" height="56" rx="8" fill="#eff4ff" stroke="#c6c6cd" stroke-width="1.5"/>
+  <text x="555" y="352" text-anchor="middle" font-size="12" fill="#0b1c30">Rewards</text>
+
+  <rect x="640" y="320" width="140" height="56" rx="8" fill="#eff4ff" stroke="#c6c6cd" stroke-width="1.5"/>
+  <text x="710" y="352" text-anchor="middle" font-size="12" fill="#0b1c30">…and more</text>
+</svg>
