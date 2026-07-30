@@ -6,7 +6,7 @@ tags: ["QA", "Testing", "AI", "Leadership", "Metrics"]
 readingTime: 10
 excerpt: "A 3:1 dev-to-TE ratio used to be the golden staffing rule on my team — until AI nearly doubled dev output and even a headcount drawdown couldn't bring it back. Running the real numbers puts the effective ratio closer to 5:1, and the automation gains that did land never touched the part of the job that actually dominates the week: manual validation. Here's the math, what's still missing, and why I think testing itself has to change."
 takeaway: "AI gave devs an efficiency gain that validation never got — headcount can't fix that gap, only rethinking what gets validated, by whom, and how, can."
-status: "LATEST"
+status: "PUBLISHED"
 order: 8
 featured: true
 featuredOrder: 1
@@ -87,4 +87,4 @@ This is where [the OODA Loop](/blog/ooda-loop-qa-ai-era) comes back in, not as a
 
 But I don't think the endpoint is "iterate faster inside the current model of testing." I think the model itself has to change. I know there are teams out there that don't validate every ticket manually — that go straight from automated coverage to release. I don't agree with that, in principle. I'm a defensively minded person: I want to know a release was validated with an actual user in mind, not just that the inputs and outputs are technically correct at the unit level, especially now, with AI in the loop. If I'm already seeing errors in copy, in design alignment, in AC that got quietly missed, it's not far-fetched that a bug is also getting into the nav graph, or into the logic that decides whether a user can enter or complete a journey at all. The small, visible errors are the warning sign for the ones that aren't visible yet.
 
-Code is cheap now. Human hours are still the bottleneck. The industry hasn't answered what we're actually going to spend those hours on — but I'd rather spend mine engineering defensive solutions, test suites, that can keep pace with the AI and align to test plan modeled after business and user value. 
+Code is cheap now — I built a whole Android app, [DaveTV](/blog/lost-remote-built-my-own-app), before Twisters finished playing. Human hours are still the bottleneck. The industry hasn't answered what we're actually going to spend those hours on — but I'd rather spend mine engineering defensive solutions, test suites, that can keep pace with the AI and align to test plan modeled after business and user value.

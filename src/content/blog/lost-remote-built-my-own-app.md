@@ -14,7 +14,7 @@ My Samsung remote has been missing for about a week now. Nothing dramatic happen
 
 That's where it fell apart. Every "Samsung TV Remote" app I found wanted something from me in exchange for controlling a TV I already own — a subscription, a one-time unlock fee, or a home screen wrapped in banner ads. I don't fault the developers for that; ads and paywalls are how those apps stay alive. But I wasn't going to pay a recurring fee, or sit through an interstitial ad, just to change the channel.
 
-I kept hunting for the actual remote a while longer, gave up, turned on my PS5, and put a movie on through that instead. Somewhere around the opening credits, I decided I was just going to build the thing myself. Ad-free, no subscription, does exactly what I need and nothing else.
+I kept hunting for the actual remote a while longer, gave up, turned on my PS5, and put Twisters on through that instead. Somewhere around the opening credits, I decided I was just going to build the thing myself. Ad-free, no subscription, does exactly what I need and nothing else.
 
 This post isn't really about that app.
 
@@ -67,4 +67,4 @@ None of the six things above were about writing Kotlin. They were about deciding
 
 I've written about this same idea from the QA side before, in [Loop Engineering](/blog/loop-engineering-test-automation) and [The OODA Loop for QA](/blog/ooda-loop-qa-ai-era) — small, gated loops beat one long, unsupervised prompt, whether what's being built is a test suite or a TV remote. DaveTV just happens to be the version of that lesson where the stakes were "can I change the channel without an ad," instead of a production release.
 
-The remote is still missing, as far as I know. I've stopped looking.
+The remote is still missing, as far as I know. I've stopped looking. DaveTV was done before Twisters was — that's the whole argument in one data point.

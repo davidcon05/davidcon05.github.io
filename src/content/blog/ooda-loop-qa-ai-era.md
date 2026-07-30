@@ -8,7 +8,7 @@ excerpt: "A dinner conversation about QA bottlenecks pulled me back to a launch 
 status: "PUBLISHED"
 order: 6
 featured: true
-featuredOrder: 2
+featuredOrder: 3
 takeaway: "AI didn't create the QA bottleneck, it just removed the slack that used to hide it. The OODA loop is how you decide what to trust, automate, and act on next, before the backlog makes that decision for you."
 ---
 
