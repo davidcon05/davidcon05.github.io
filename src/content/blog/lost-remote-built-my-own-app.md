@@ -8,6 +8,8 @@ excerpt: "My Samsung remote went missing, and every replacement app in the Play 
 status: "PUBLISHED"
 order: 7
 takeaway: "Code generation is fast now. The actual skill is knowing precisely what to build next, and disciplining the loop — research, plan, one slice, validate, commit — that keeps the AI pointed at it."
+projectUrl: "/projects/davetv"
+projectName: "DaveTV"
 ---
 
 My Samsung remote has been missing for about a week now. Nothing dramatic happened to it — nobody threw it, no pet ate it — it just did what small plastic objects do in a house with couch cushions: it vanished. I checked the usual spots, then the unusual ones, and eventually did what everyone does when the physical object is gone. I opened the Play Store to find a replacement.

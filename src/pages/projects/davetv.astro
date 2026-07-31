@@ -1,0 +1,248 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopNavBar from '../../components/TopNavBar.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="DaveTV | David Contreras" description="A Kotlin/Compose Android app that talks directly to a Samsung TV over the local network — no ads, no subscription, no account.">
+  <TopNavBar currentPath="/projects" />
+
+  <main class="pt-32 pb-[var(--spacing-section-gap)] max-w-7xl mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]">
+
+    <!-- Breadcrumb -->
+    <nav class="mb-8">
+      <a href="/projects" class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant hover:text-secondary transition-colors inline-flex items-center gap-1">
+        <span class="material-symbols-outlined" style="font-size: 16px;">arrow_back</span>
+        PROJECTS
+      </a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-start">
+        <div>
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary uppercase">Android Application</span>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] px-2 py-0.5 border" style="border-color: #4cd7f6; color: #4cd7f6;">COMPLETE</span>
+          </div>
+          <h1 class="mb-6" style="font-family: var(--font-headline-xl); font-size: var(--font-size-headline-xl); line-height: var(--font-size-headline-xl--line-height); font-weight: var(--font-size-headline-xl--font-weight); letter-spacing: var(--font-size-headline-xl--letter-spacing);">
+            DaveTV
+          </h1>
+          <p class="font-[var(--font-body-lg)] text-[var(--font-size-body-lg)] text-on-surface-variant mb-4" style="line-height: var(--font-size-body-lg--line-height);">
+            My Samsung remote went missing, and every replacement app in the Play Store wanted an ad slot or a subscription just to change the channel. I wasn't paying a recurring fee, or sitting through an interstitial ad, to control a TV I already own.
+          </p>
+          <p class="font-[var(--font-body-lg)] text-[var(--font-size-body-lg)] text-on-surface-variant mb-8" style="line-height: var(--font-size-body-lg--line-height);">
+            So I built my own. DaveTV is a Kotlin and Jetpack Compose Android app that talks to my Samsung TV directly over the local network — SSDP discovery, a WebSocket pairing handshake, and DIAL for launching apps. No account, no cloud round-trip, no ads. Free, and it does exactly what I need and nothing else.
+          </p>
+
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-2 border border-outline-variant px-4 py-2">
+              <span class="material-symbols-outlined text-secondary" style="font-size: 16px;">schedule</span>
+              <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">One weekend, done before the movie was</span>
+            </div>
+            <div class="flex items-center gap-2 border border-outline-variant px-4 py-2">
+              <span class="material-symbols-outlined text-secondary" style="font-size: 16px;">layers</span>
+              <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">5 phases, research-first</span>
+            </div>
+            <div class="flex items-center gap-2 border border-outline-variant px-4 py-2">
+              <span class="material-symbols-outlined text-secondary" style="font-size: 16px;">wifi</span>
+              <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">Local network only</span>
+            </div>
+            <div class="flex items-center gap-2 border border-outline-variant px-4 py-2">
+              <span class="material-symbols-outlined text-secondary" style="font-size: 16px;">block</span>
+              <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">$0 — no ads, no subscription</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center bg-surface-container-low border border-outline-variant p-6">
+          <video
+            controls
+            class="max-h-[500px] w-auto"
+            preload="metadata"
+          >
+            <source src="/videos/davetv-demo.mp4" type="video/mp4" />
+            Your browser doesn't support embedded video. <a href="/videos/davetv-demo.mp4">Download the DaveTV demo</a> instead.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="flex items-center gap-4 mb-12">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          What It Does
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="space-y-[var(--spacing-section-gap)]">
+
+        <!-- Feature 1: Discovery + Pairing -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-center">
+          <div>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">FEATURE 01</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Finds and Pairs With the TV, No Manual Setup.
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
+              SSDP discovery finds the TV on the network automatically, then negotiates trust through a WebSocket pairing handshake. No IP addresses to type in, no manual setup — open the app on the same network and it finds the TV itself.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">SSDP DISCOVERY</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">WEBSOCKET PAIRING</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">ZERO CONFIG</span>
+            </div>
+          </div>
+          <div class="border border-outline-variant bg-surface-container-low overflow-hidden">
+            <img
+              src="/images/davetv-pairing-prompt.jpg"
+              alt="The Samsung TV's on-screen pairing prompt while DaveTV connects to it"
+              class="w-full h-auto"
+            />
+          </div>
+        </div>
+
+        <!-- Feature 2: DIAL + Commands -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-center">
+          <div class="order-2 md:order-1 border border-outline-variant bg-surface-container-low flex items-center justify-center p-6">
+            <img
+              src="/images/davetv-remote-ui.jpg"
+              alt="The DaveTV remote UI, showing the full button layout"
+              class="max-h-[500px] w-auto"
+            />
+          </div>
+          <div class="order-1 md:order-2">
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">FEATURE 02</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Every Real Remote Command, Plus App Launching.
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
+              The full <code>KEY_*</code> command set for input, plus app launching over DIAL — so it's not just a channel changer. It opens Netflix, YouTube, whatever's on the home screen, the same way the physical remote would.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">DIAL PROTOCOL</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">KEY_* COMMANDS</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">APP LAUNCHING</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3: Edge Cases -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-center">
+          <div>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">FEATURE 03</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Handles the Edge Cases That Actually Happen.
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
+              TV asleep versus fully off, the phone on the wrong Wi-Fi network, a pairing token silently revoked, a self-signed TLS cert the OS doesn't trust by default — all researched and handled up front, before any of them turned into a support ticket of one.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">SELF-SIGNED TLS</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">TOKEN REVOCATION</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">GRACEFUL RECONNECT</span>
+            </div>
+          </div>
+          <div class="border border-outline-variant bg-surface-container-low flex items-center justify-center p-6">
+            <img
+              src="/images/davetv-error-state.jpg"
+              alt="DaveTV's error state when the TV is unreachable or pairing is lost"
+              class="max-h-[500px] w-auto"
+            />
+          </div>
+        </div>
+
+        <!-- Feature 4: Multi-TV, feature-flagged -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)] items-center">
+          <div class="order-2 md:order-1 border border-outline-variant bg-surface-container-low flex items-center justify-center p-6">
+            <img
+              src="/images/davetv-multi-device.jpg"
+              alt="The DaveTV settings screen, with multi-device support hidden behind its feature flag"
+              class="max-h-[500px] w-auto"
+            />
+          </div>
+          <div class="order-1 md:order-2">
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4 block">FEATURE 04</span>
+            <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
+              Multi-TV Support, Feature-Flagged Until It's Real.
+            </h3>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
+              Multi-device persistence is built, but it sits completely inert behind a feature flag — because I own exactly one Samsung TV, and there's no honest way to validate multi-TV pairing without a second one to test against. Untested doesn't ship.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">FEATURE FLAGGED</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">ROOM PERSISTENCE</span>
+              <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">UNTESTED ≠ SHIPPED</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="mb-[var(--spacing-section-gap)]">
+      <div class="flex items-center gap-4 mb-8">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          Under the Hood
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-[var(--spacing-gutter)]">
+        <div class="border border-outline-variant bg-surface-container-lowest p-6">
+          <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4">APP LAYER</p>
+          <div class="space-y-2">
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Kotlin</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Jetpack Compose</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Coroutines / Flow</p>
+          </div>
+        </div>
+        <div class="border border-outline-variant bg-surface-container-lowest p-6">
+          <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4">NETWORKING</p>
+          <div class="space-y-2">
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">SSDP discovery</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">WebSocket (OkHttp)</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">DIAL</p>
+          </div>
+        </div>
+        <div class="border border-outline-variant bg-surface-container-lowest p-6">
+          <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-4">INFRASTRUCTURE</p>
+          <div class="space-y-2">
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Local network only</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">Room (device persistence)</p>
+            <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)]">No backend, no account</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="max-w-3xl">
+      <div class="flex items-center gap-4 mb-8">
+        <h2 style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+          The Full Story
+        </h2>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+
+      <a
+        href="/blog/lost-remote-built-my-own-app"
+        class="block bg-surface-container-lowest border border-outline-variant p-8 hover:border-secondary transition-colors group"
+      >
+        <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-4" style="line-height: var(--font-size-body-md--line-height);">
+          This project's actual story isn't the code — it's the loop that built it: research before a single line existed, five phases in a fixed order, a mockup before a single screen, and a commit discipline that wouldn't let AI get ahead of me.
+        </p>
+        <span class="inline-flex items-center gap-2 font-bold font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-primary group-hover:text-secondary transition-colors">
+          READ THE FULL BUILD STORY
+          <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+        </span>
+      </a>
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
