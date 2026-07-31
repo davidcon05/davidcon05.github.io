@@ -46,18 +46,21 @@ const toCardProps = (post: (typeof allPosts)[number]) => ({
     </header>
 
     <div class="grid grid-cols-12 gap-[var(--spacing-gutter)] items-start">
+      <!-- "Featured" label gets its own row, lg+ only, so the card row below it starts at the
+           same top as the sidebar — see order-1/order-2 below for how this collapses on mobile. -->
+      {featuredPosts.length > 0 && (
+        <h2 class="col-span-12 lg:col-span-8 lg:row-start-1 mb-[var(--spacing-gutter)] font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] uppercase tracking-wide text-on-surface-variant">
+          Featured
+        </h2>
+      )}
+
       <!-- Main Content: Blog Feed -->
-      <section class="col-span-12 lg:col-span-8 order-1">
+      <section class="col-span-12 lg:col-span-8 lg:row-start-2 order-1">
         {featuredPosts.length > 0 && (
-          <div class="mb-[var(--spacing-section-gap)]">
-            <h2 class="mb-[var(--spacing-gutter)] font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] uppercase tracking-wide text-on-surface-variant">
-              Featured
-            </h2>
-            <div class="space-y-[var(--spacing-gutter)]">
-              {featuredPosts.map((post) => (
-                <BlogCard post={toCardProps(post)} />
-              ))}
-            </div>
+          <div class="space-y-[var(--spacing-gutter)] mb-[var(--spacing-section-gap)]">
+            {featuredPosts.map((post) => (
+              <BlogCard post={toCardProps(post)} />
+            ))}
           </div>
         )}
 
@@ -72,7 +75,7 @@ const toCardProps = (post: (typeof allPosts)[number]) => ({
       </section>
 
       <!-- Sidebar -->
-      <aside class="col-span-12 lg:col-span-4 order-2">
+      <aside class="col-span-12 lg:col-span-4 lg:row-start-2 order-2">
         <Sidebar />
       </aside>
     </div>
