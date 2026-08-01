@@ -12,11 +12,14 @@ status: "PUBLISHED"
 takeaway: "While AI drastically amplifies throughput, it also heightens the need for human expertise to avoid hidden traps. Moving fast led us to rely heavily on mock test data for hardware integrations, which ultimately introduced a wave of bugs when deployed on physical devices. Ultimately, the tools we use change, but the fundamental need for rigorous testing and domain knowledge does not."
 ---
 
+> **Correction (August 2026):** The 85% test coverage figure below was wrong. It came from my AI agent's report, and I published it without measuring it myself. The first time anyone ran a real single-pass measurement across both test suites, it came back **24.36%**. It is now a measured **65%**. I've left the original numbers in place rather than quietly editing them, because how that happened turned out to be the more useful story — [I wrote it up here](/blog/ios-coverage-truth).
+
+
 **Challenge**: Build a production-quality iOS field research app from scratch in one month, with zero native iOS development experience.
 
 **The Tool**: Claude Code.
 
-**The Result**: Shipped a stable app with 85%+ test coverage and zero production crashes in 28 days.
+**The Result**: Shipped a stable app with 85%+ test coverage *(see correction above — the measured figure was 24.36%)* and zero production crashes in 28 days.
 
 But the real story isn't just that it got built. It’s how I almost let AI speed ruin it, and how classic QA fundamentals saved it.
 
@@ -62,7 +65,7 @@ To survive the final two weekends, I stopped trusting the AI's definitions of "c
 
 ## The Takeaway: The Tools Change, the Fundamentals Don't
 
-AI amplifies throughput; it is not a replacement for expertise. The tools change. The fundamentals don't. By the end of the 28 days, the final metrics looked incredible: 10,000+ lines of Swift, 85% overall test coverage, and a stable app in my wife's hands with zero production crashes.
+AI amplifies throughput; it is not a replacement for expertise. The tools change. The fundamentals don't. By the end of the 28 days, the final metrics looked incredible: 10,000+ lines of Swift, 85% overall test coverage *(unmeasured — see correction above)*, and a stable app in my wife's hands with zero production crashes.
 
 But those numbers weren't achieved because the AI is a genius. They were achieved because when the AI's velocity threatened to drive the project off a cliff, human engineering fundamentals, rigorous testing architecture, physical device validation, and strict gatekeeping—pulled it back.
 
