@@ -143,3 +143,34 @@ body {
 .flat-depth-card:hover {
   border-color: var(--color-secondary-container);
 }
+
+/* ---------------------------------------------------------------------------
+   Code blocks
+   Inline code and fenced blocks share the same <code> element, so the prose
+   styles for inline code (background, padding) leak into every line of a
+   block. Reset that inside <pre>, and let the block itself carry the surface.
+   --------------------------------------------------------------------------- */
+
+.prose pre {
+  font-family: var(--font-code-block), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--font-size-code-block);
+  line-height: var(--font-size-code-block--line-height);
+  color: var(--color-on-surface);
+  overflow-x: auto;
+  white-space: pre;
+  tab-size: 2;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  font-weight: var(--font-size-code-block--font-weight);
+  white-space: inherit;
+}
+
+/* Inline code keeps its chip treatment, but shouldn't wrap awkwardly. */
+.prose :not(pre) > code {
+  white-space: nowrap;
+}
