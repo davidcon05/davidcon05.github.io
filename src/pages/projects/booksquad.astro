@@ -21,7 +21,7 @@ import Footer from '../../components/Footer.astro';
     <section class="mb-16">
       <div class="flex flex-wrap items-center gap-3 mb-6">
         <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary uppercase">Kotlin Multiplatform · iOS + Android</span>
-        <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] px-2 py-0.5 border border-outline-variant text-on-surface-variant">IN DEVELOPMENT</span>
+        <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] px-2 py-0.5 border border-outline-variant text-on-surface-variant">ON HOLD</span>
       </div>
       <h1 class="mb-6" style="font-family: var(--font-headline-xl); font-size: var(--font-size-headline-xl); line-height: var(--font-size-headline-xl--line-height); font-weight: var(--font-size-headline-xl--font-weight); letter-spacing: var(--font-size-headline-xl--letter-spacing);">
         BookSquad
@@ -140,7 +140,7 @@ import Footer from '../../components/Footer.astro';
               Scan a Barcode. Your Library Updates.
             </h3>
             <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6" style="line-height: var(--font-size-body-md--line-height);">
-              Point the camera at the ISBN barcode. The app fetches the title, author, cover, and metadata from Google Books automatically. No typing. Cataloguing a physical shelf goes from an afternoon project to a twenty-minute one.
+              Point the camera at the ISBN barcode and the app fetches title, author, cover, and metadata from Google Books automatically — that's the plan. In practice, getting a reliable scan across different phone cameras, lighting, and book-cover finishes turned into its own project: ML Kit and Vision don't agree on what counts as a clean read, and a flaky scanner is worse than no scanner at all. This is the piece that put BookSquad on hold while I rethink the approach.
             </p>
             <div class="flex flex-wrap gap-2">
               <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">ML KIT (ANDROID)</span>

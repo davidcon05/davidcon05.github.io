@@ -24,12 +24,14 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- Featured: EcoJournal -->
+    <!-- Completed -->
     <section class="mb-[var(--spacing-section-gap)]">
       <div class="flex items-center gap-4 mb-8">
-        <h2 class="text-primary" style="font-family: var(--font-label-mono); font-size: var(--font-size-label-mono); letter-spacing: 0.15em;">SHIPPED</h2>
+        <h2 class="text-primary" style="font-family: var(--font-label-mono); font-size: var(--font-size-label-mono); letter-spacing: 0.15em;">COMPLETED</h2>
         <div class="h-px bg-outline-variant flex-grow"></div>
       </div>
+
+      <div class="space-y-[var(--spacing-gutter)]">
 
       <article class="border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-colors group">
         <div class="grid grid-cols-1 md:grid-cols-2">
@@ -39,7 +41,7 @@ import Footer from '../components/Footer.astro';
             <div>
               <div class="flex items-center gap-3 mb-6">
                 <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary uppercase">iOS Application</span>
-                <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] px-2 py-0.5 border" style="border-color: #4cd7f6; color: #4cd7f6;">IN TESTFLIGHT</span>
+                <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] px-2 py-0.5 border" style="background-color: #131b2e; border-color: #131b2e; color: #acedff;">IN TESTFLIGHT</span>
               </div>
               <h2 class="mb-4" style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
                 EcoJournal
@@ -96,6 +98,73 @@ import Footer from '../components/Footer.astro';
 
         </div>
       </article>
+
+      <!-- Featured: DaveTV -->
+      <article class="border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-colors group">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+
+          <!-- Left: Info -->
+          <div class="p-8 md:p-12 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-6">
+                <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary uppercase">Android Application</span>
+                <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] px-2 py-0.5 border" style="background-color: #131b2e; border-color: #131b2e; color: #acedff;">COMPLETE</span>
+              </div>
+              <h2 class="mb-4" style="font-family: var(--font-headline-lg); font-size: var(--font-size-headline-lg); line-height: var(--font-size-headline-lg--line-height); font-weight: var(--font-size-headline-lg--font-weight);">
+                DaveTV
+              </h2>
+              <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-8" style="line-height: var(--font-size-body-md--line-height);">
+                Lost my Samsung remote, and every replacement app in the Play Store wanted a subscription or an ad slot to change the channel. Built my own instead — talks to the TV directly over the local network, no ads, no account, no monthly fee.
+              </p>
+
+              <div class="grid grid-cols-2 gap-4 mb-8">
+                <div class="bg-surface-container p-4">
+                  <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-1">BUILD TIME</p>
+                  <p class="font-bold text-primary text-xl">&lt; 2 Hours</p>
+                </div>
+                <div class="bg-surface-container p-4">
+                  <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-1">PHASES</p>
+                  <p class="font-bold text-primary text-xl">5, Research-First</p>
+                </div>
+                <div class="bg-surface-container p-4">
+                  <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-1">NETWORK</p>
+                  <p class="font-bold text-primary text-xl">Local Only</p>
+                </div>
+                <div class="bg-surface-container p-4">
+                  <p class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary mb-1">COST</p>
+                  <p class="font-bold text-primary text-xl">$0</p>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2 mb-8">
+                <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">ANDROID</span>
+                <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">KOTLIN</span>
+                <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">JETPACK COMPOSE</span>
+                <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">LOCAL NETWORK</span>
+              </div>
+            </div>
+
+            <a
+              href="/projects/davetv"
+              class="inline-flex items-center gap-2 font-bold font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-primary group-hover:text-secondary transition-colors"
+            >
+              VIEW PROJECT
+              <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+            </a>
+          </div>
+
+          <!-- Right: Screenshot -->
+          <div class="border-l border-outline-variant bg-surface-container-low flex items-center justify-center p-6 min-h-[400px]">
+            <img
+              src="/images/davetv-remote-ui.jpg"
+              alt="The DaveTV remote UI, showing the full button layout"
+              class="max-h-[400px] w-auto"
+            />
+          </div>
+
+        </div>
+      </article>
+      </div>
     </section>
 
     <!-- In the Lab -->
@@ -106,13 +175,13 @@ import Footer from '../components/Footer.astro';
         <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-on-surface-variant">Work in progress — building in public</span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-[var(--spacing-gutter)]">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-gutter)]">
 
         <!-- BookSquad -->
         <article class="border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-colors p-8 flex flex-col">
           <div class="flex items-center gap-3 mb-6">
             <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary uppercase">KMP · iOS + Android</span>
-            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] px-2 py-0.5 border border-outline-variant text-on-surface-variant">SCAFFOLDING</span>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] px-2 py-0.5 border border-outline-variant text-on-surface-variant">ON HOLD</span>
           </div>
           <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
             BookSquad
@@ -139,7 +208,7 @@ import Footer from '../components/Footer.astro';
         <article class="border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-colors p-8 flex flex-col">
           <div class="flex items-center gap-3 mb-6">
             <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary uppercase">Android</span>
-            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] px-2 py-0.5 border border-outline-variant text-on-surface-variant">ON PAUSE</span>
+            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] px-2 py-0.5 border border-outline-variant text-on-surface-variant">WEEKEND PROJECT</span>
           </div>
           <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
             A1Fit
@@ -155,33 +224,6 @@ import Footer from '../components/Footer.astro';
           </div>
           <a
             href="/projects/a1fit"
-            class="inline-flex items-center gap-2 font-bold font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-primary hover:text-secondary transition-colors"
-          >
-            VIEW PROJECT
-            <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
-          </a>
-        </article>
-
-        <!-- DaveTV -->
-        <article class="border border-outline-variant bg-surface-container-lowest hover:border-secondary transition-colors p-8 flex flex-col">
-          <div class="flex items-center gap-3 mb-6">
-            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-secondary uppercase">Android</span>
-            <span class="font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] px-2 py-0.5 border" style="border-color: #4cd7f6; color: #4cd7f6;">COMPLETE</span>
-          </div>
-          <h3 class="mb-4" style="font-family: var(--font-headline-md); font-size: var(--font-size-headline-md); line-height: var(--font-size-headline-md--line-height); font-weight: var(--font-size-headline-md--font-weight);">
-            DaveTV
-          </h3>
-          <p class="font-[var(--font-body-md)] text-[var(--font-size-body-md)] text-on-surface-variant mb-6 flex-grow" style="line-height: var(--font-size-body-md--line-height);">
-            Lost my Samsung remote, and every replacement app in the Play Store wanted a subscription or an ad slot to change the channel. Built my own instead — talks to the TV directly over the local network, no ads, no account, no monthly fee.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">ANDROID</span>
-            <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">KOTLIN</span>
-            <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">JETPACK COMPOSE</span>
-            <span class="font-[var(--font-label-mono)] text-[11px] bg-surface-container px-3 py-1">LOCAL NETWORK</span>
-          </div>
-          <a
-            href="/projects/davetv"
             class="inline-flex items-center gap-2 font-bold font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] text-primary hover:text-secondary transition-colors"
           >
             VIEW PROJECT
