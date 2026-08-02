@@ -1,5 +1,5 @@
 ---
-title: "The DEV:TE Ratio Just Inverted: What AI-Generated Code Means for Test Engineering"
+title: "The DEV:TE Ratio Was Never About Headcount"
 date: 2026-07-30
 category: "Testing & Quality"
 tags: ["QA", "Testing", "AI", "Leadership", "Metrics"]
