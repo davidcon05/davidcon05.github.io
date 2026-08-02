@@ -2,12 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TopNavBar from '../components/TopNavBar.astro';
 import BlogCard from '../components/BlogCard.astro';
+import BlogListItem from '../components/BlogListItem.astro';
 import Sidebar from '../components/Sidebar.astro';
 import Footer from '../components/Footer.astro';
 import { getCollection } from 'astro:content';
 
 // Get all blog posts
 const allPosts = await getCollection('blog');
+const featuredPosts = allPosts
+  .filter((post) => post.data.featured)
+  .sort((a, b) => (a.data.featuredOrder ?? Infinity) - (b.data.featuredOrder ?? Infinity));
 const sortedPosts = allPosts.sort((a, b) =>
   new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
@@ -29,30 +33,62 @@ const sortedPosts = allPosts.sort((a, b) =>
     </header>
 
     <div class="grid grid-cols-12 gap-[var(--spacing-gutter)] items-start">
+      {featuredPosts.length > 0 && (
+        <h2 class="col-span-12 lg:col-span-8 lg:row-start-1 mb-[var(--spacing-gutter)] font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] uppercase tracking-wide text-on-surface-variant">
+          Featured
+        </h2>
+      )}
+
       <!-- Main Content: Blog Feed -->
-      <section class="col-span-12 lg:col-span-8 space-y-[var(--spacing-gutter)] order-1">
-        {sortedPosts.map((post, index) => (
-          <BlogCard
-            post={{
-              title: post.data.title,
-              date: new Date(post.data.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-              }).toUpperCase(),
-              readTime: post.data.readingTime,
-              excerpt: post.data.excerpt,
-              tags: post.data.tags,
-              status: post.data.status,
-              slug: post.id,
-            }}
-            isLatest={index === 0}
-          />
-        ))}
+      <section class="col-span-12 lg:col-span-8 lg:row-start-2 order-1">
+        {featuredPosts.length > 0 && (
+          <div class="space-y-[var(--spacing-gutter)] mb-[var(--spacing-section-gap)]">
+            {featuredPosts.map((post, index) => (
+              <BlogCard
+                post={{
+                  title: post.data.title,
+                  date: new Date(post.data.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  }).toUpperCase(),
+                  readTime: post.data.readingTime,
+                  excerpt: post.data.excerpt,
+                  tags: post.data.tags,
+                  status: post.data.status,
+                  slug: post.id,
+                }}
+                isLatest={index === 0}
+              />
+            ))}
+          </div>
+        )}
+
+        <h2 class="mb-[var(--spacing-gutter)] font-[var(--font-label-mono)] text-[var(--font-size-label-mono)] uppercase tracking-wide text-on-surface-variant">
+          All Posts
+        </h2>
+        <div class="border-t border-outline-variant">
+          {sortedPosts.map((post) => (
+            <BlogListItem
+              post={{
+                title: post.data.title,
+                date: new Date(post.data.date).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric',
+                }).toUpperCase(),
+                readTime: post.data.readingTime,
+                excerpt: post.data.excerpt,
+                tags: post.data.tags,
+                slug: post.id,
+              }}
+            />
+          ))}
+        </div>
       </section>
 
       <!-- Sidebar -->
-      <aside class="col-span-12 lg:col-span-4 order-2">
+      <aside class="col-span-12 lg:col-span-4 lg:row-start-2 order-2">
         <Sidebar />
       </aside>
     </div>
