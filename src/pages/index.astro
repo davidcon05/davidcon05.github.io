@@ -7,8 +7,11 @@ import Sidebar from '../components/Sidebar.astro';
 import Footer from '../components/Footer.astro';
 import { getCollection } from 'astro:content';
 
-// Get all blog posts
-const allPosts = await getCollection('blog');
+// Get all blog posts. getCollection is unfiltered, so anything sitting in
+// src/content/blog publishes itself on the next build. status: "DRAFT" is how a
+// post stays in the repo without going live, and it has to be excluded here and
+// in the [slug] route that generates the post pages.
+const allPosts = (await getCollection('blog')).filter((post) => post.data.status !== 'DRAFT');
 const featuredPosts = allPosts
   .filter((post) => post.data.featured)
   .sort((a, b) => (a.data.featuredOrder ?? Infinity) - (b.data.featuredOrder ?? Infinity));

@@ -4,9 +4,11 @@ import TopNavBar from '../../components/TopNavBar.astro';
 import Footer from '../../components/Footer.astro';
 import { getCollection, render } from 'astro:content';
 
-// Generate static paths for all blog posts
+// Generate static paths for all blog posts. DRAFT posts are excluded so they
+// never get a page built, which is what keeps an unpublished draft unreachable
+// by URL rather than merely unlinked. Mirrors the filter on the homepage.
 export async function getStaticPaths() {
-  const allPosts = await getCollection('blog');
+  const allPosts = (await getCollection('blog')).filter((post) => post.data.status !== 'DRAFT');
 
   const sortedPosts = allPosts.sort((a, b) =>
     (a.data.order ?? Infinity) - (b.data.order ?? Infinity)
